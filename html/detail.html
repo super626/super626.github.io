@@ -180,7 +180,7 @@
 			}
 
 			//窗口隐藏时，重置页面数据
-			//mui.plusReady(function() {
+			mui.plusReady(function() {
 				alert(guid);
 				alert(cityId);
 				mui.ajax('https://ticket-api-m.mtime.cn/movie/detail.api?locationId=' + cityId + '&movieId=' + guid, {
@@ -227,7 +227,7 @@
 						mui.toast("获取数据失败");
 					}
 				});
-//			});
+			});
 
 			function bannerImgClicked() {
 				playVideo(videourl);
