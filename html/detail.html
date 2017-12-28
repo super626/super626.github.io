@@ -9,7 +9,6 @@
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">预告详情</h1>
-			<button type="button" class="mui-btn mui-btn-outlined mui-pull-right" onclick="onShare()">分享</button>
 		</header>
 		<style type="text/css">
 			.mui-media {
@@ -103,6 +102,7 @@
 			<!--顶部banner图 开始-->
 			<div id="kr-article-banner" class="kr-article-banner banner">
 				<div id="kr-article-cover" class="kr-article-cover">
+					<video :src="videourl"></video>
 					<img :src="cover">
 					<div id="waitingbar" class=" mui-progressbar mui-progressbar-infinite waitingprogress">
 						<span></span>
@@ -132,14 +132,26 @@
 		<script src="../js/mui.min.js"></script>
 		<script src="../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" src="../js/playerplugin.js"></script>
-		<script type="text/javascript" src="../js/update.js" ></script>
+		<script type="text/javascript" src="../js/update.js"></script>
 		<script type="text/javascript">
+			function getUrlParam(name) {
+				//构造一个含有目标参数的正则表达式对象
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+				//匹配目标参数
+				var r = window.location.search.substr(1).match(reg);
+				//返回参数值
+				if(r != null) {
+					return decodeURI(r[2]);
+				}
+				return null;
+			}
+			var cityId = getUrlParam('cityId');
+			var guid = getUrlParam('movieId');
+
 			mui.init({
 				swipeBack: true
 			});
 			var videourl = '';
-			var cityId = 0;
-			var guid = 0;
 
 			function getDefaultData() {
 				return {
@@ -162,97 +174,6 @@
 				}
 			});
 
-			mui("#waitingbar").progressbar().show();
-			//监听自定义事件，获取新闻详情
-			document.addEventListener('get_detail', function(event) {
-				//前页传入的数据，直接渲染，无需等待ajax请求详情后
-
-				vm.cover = event.detail.cover || '';
-				vm.title = event.detail.title;
-				vm.time = event.detail.time;
-
-				videourl = event.detail.video || '';
-
-				function readyPlay() {
-					var waitingbar = document.getElementById("waitingbar");
-					waitingbar.style.display = 'none';
-					var check = (localStorage.getItem('check') == 'true' ? true : false);
-					if(check) {
-						vm.cover = '../img/videoloading.jpg';
-//						if(videourl !== '') {
-//							previewImg(videourl,
-//								function(msg) {
-//									vm.cover = msg;
-//								},
-//								function(msg) {
-//									toast('failed to fetch img');
-//								});
-//						}
-					} else {
-						var playbtn = document.getElementById("playBtn");
-						playbtn.style.display = 'block';
-					}
-
-				}
-
-				if(vm.cover == '' && videourl !== '') {
-					previewImg(videourl,
-						function(msg) {
-							vm.cover = msg;
-							readyPlay();
-						},
-						function(msg) {
-							toast('failed to fetch img');
-						});
-				}
-				if(vm.cover !== '' && videourl !== '') {
-					readyPlay();
-				}
-				if(videourl == '') {
-					//get video url from guid
-					cityId = event.detail.cityId;
-					guid = event.detail.guid;
-					mui.ajax('https://ticket-api-m.mtime.cn/movie/detail.api?locationId=' + event.detail.cityId + '&movieId=' + event.detail.guid, {
-						data: {},
-						dataType: 'json', //服务器返回json格式数据
-						type: 'get', //HTTP请求类型
-						timeout: 5000, //超时时间设置为10秒；
-						success: function(data) {
-							if(data.hasOwnProperty('data') && data.data.hasOwnProperty('basic')) {
-								var basicdata = data.data.basic;
-								if(basicdata.hasOwnProperty('video')) {
-									if(basicdata.video.hasOwnProperty('hightUrl')) {
-										videourl = basicdata.video.hightUrl;
-									} else if(basicdata.video.hasOwnProperty('url')) {
-										videourl = basicdata.video.url;
-									}
-								}
-								if(basicdata.hasOwnProperty('story')) {
-									vm.content = basicdata.story;
-								}
-								if(basicdata.hasOwnProperty('director')) {
-									vm.director = basicdata.director.name;
-								}
-								if(basicdata.hasOwnProperty('actors')) {
-									vm.actors = '';
-									for(var i = 0; i < basicdata.actors.length; i++) {
-										if(basicdata.actors[i].hasOwnProperty('name') && basicdata.actors[i].name !== '')
-											vm.actors += basicdata.actors[i].name + ';';
-									}
-								}
-							}
-							if(videourl !== '') {
-								readyPlay();
-							}
-						},
-						error: function(xhr, type, errorThrown) {
-							//异常处理；
-							mui.toast("获取数据失败");
-						}
-					});
-				}
-			});
-
 			//重写返回逻辑
 			mui.back = function() {
 				plus.webview.currentWebview().hide("auto", 300);
@@ -260,21 +181,54 @@
 
 			//窗口隐藏时，重置页面数据
 			mui.plusReady(function() {
-				var self = plus.webview.currentWebview();
-				self.addEventListener("hide", function(e) {
-					window.scrollTo(0, 0);
-					vm.resetData();
-				}, false);
+				mui.ajax('https://ticket-api-m.mtime.cn/movie/detail.api?locationId=' + cityId + '&movieId=' + guid, {
+					data: {},
+					dataType: 'json', //服务器返回json格式数据
+					type: 'get', //HTTP请求类型
+					timeout: 5000, //超时时间设置为10秒；
+					success: function(data) {
+						if(data.hasOwnProperty('data') && data.data.hasOwnProperty('basic')) {
+							var basicdata = data.data.basic;
+							if(basicdata.hasOwnProperty('video')) {
+								if(basicdata.video.hasOwnProperty('hightUrl')) {
+									vm.videourl = basicdata.video.hightUrl;
+								} else if(basicdata.video.hasOwnProperty('url')) {
+									vm.videourl = basicdata.video.url;
+								}
+							}
+							if (basicdata.hasOwnProperty('img')){
+								vm.cover = basicdata.img;
+							}
+							if (basicdata.hasOwnProperty('name')){
+								vm.title = basicdata.name;
+							}
+							if (basicdata.hasOwnProperty('mins')){
+								vm.time = basicdata.mins;
+							}
+							if(basicdata.hasOwnProperty('story')) {
+								vm.content = basicdata.story;
+							}
+							if(basicdata.hasOwnProperty('director')) {
+								vm.director = basicdata.director.name;
+							}
+							if(basicdata.hasOwnProperty('actors')) {
+								vm.actors = '';
+								for(var i = 0; i < basicdata.actors.length; i++) {
+									if(basicdata.actors[i].hasOwnProperty('name') && basicdata.actors[i].name !== '')
+										vm.actors += basicdata.actors[i].name + ';';
+								}
+							}
+						}
+					},
+					error: function(xhr, type, errorThrown) {
+						//异常处理；
+						mui.toast("获取数据失败");
+					}
+				});
 			});
 
 			function bannerImgClicked() {
 				playVideo(videourl);
-			}
-			
-			function onShare() {
-				var url = shareMovies + '?cityId='+cityId + '&movieId='+guid;
-				var content = {href: url, title: vm.title, content: vm.content};
-				shareHref(content);
 			}
 		</script>
 	</body>
