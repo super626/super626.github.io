@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">举报原因</h1>
+		</header>
+	</head>
+
+	<body>
+
+		<div class="mui-content">
+			<ul class="mui-table-view mui-table-view-radio">
+				<li class="mui-table-view-cell mui-selected">
+					<a class="mui-navigate-right">无法播放</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">不健康内容</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">其他</a>
+				</li>
+			</ul>
+
+			<hr style="border:3 double #987cb9" width="90%" SIZE=3/>
+			<div class="mui-row" style='padding: 10px 15px;'>
+				<label>说明：</label>
+			</div>
+			<div class="row mui-input-row" style='padding: 0px 15px;'>
+				<textarea id='description' placeholder="其他说明..."></textarea>
+			</div>
+			<div style='padding: 0px 15px;'>
+				<button type="button" onclick='reportShare()' class="mui-btn mui-btn-blue mui-btn-block">提交</button>
+			</div>
+
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/update.js" ></script>
+		<script type="text/javascript">
+			var reason = '无法播放';
+			var description = '';
+			mui.init();
+
+			mui.plusReady(function() {
+				var list = document.querySelector('.mui-table-view.mui-table-view-radio');
+				list.addEventListener('selected', function(e) {
+					reason = e.detail.el.innerText;
+					
+				});
+			});
+
+			function reportShare() {
+				var des = document.getElementById('description');
+				description = des.value.replace(/(^[\s\t\xa0\u3000]+)|([\u3000\xa0\s\t]+$)/g, "");
+				if(description === "" ) {
+					mui.alert('写点原因吧', '举报');
+					return;
+				}
+				var self = plus.webview.currentWebview();
+				var videoid = self.videoid;
+				var data = {'videoid': videoid, 'reason': reason, 'uuid': plus.device.uuid, 'detail': description};
+					        mui.getJSON(reportshare, data, function(rsp) {
+								mui.alert(rsp.msg, '举报结果');
+							});											
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,57 +1,84 @@
 <!DOCTYPE html>
-<html lang="en" class="loading">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no">
-<meta name="google" content="notranslate">
-<link rel="icon" href="favicon.png">
-<title>Fengz' Cloud</title>
-<script>
-window.config = {"title":"Fengz' Cloud","user":"YCF","repo":"ycf.github.com","token":"10636da3316a7ac0c12d80bccafccaede4b6ea1c","authors":"YCF","per_page":"15","sandbox":"false"}
-</script>
-
-<style>html.loading{height:100%;text-align:center}html.loading body{height:100%}html.loading body:before{content:'';width:30px;height:30px;-webkit-border-radius:30px;border-radius:30px;-webkit-animation:loading 1.5s linear forwards infinite;animation:loading 1.5s linear forwards infinite;display:inline-block;border-top:4px solid #0089fa;border-right:4px solid #ff002b;border-bottom:4px solid #ffa900;border-left:4px solid #00a753;vertical-align:middle}html.loading body:after{content:'';display:inline-block;height:100%;vertical-align:middle}html.loading .container{display:none}@keyframes loading{100%{transform:rotate(360deg)}}@-webkit-keyframes loading{100%{-webkit-transform:rotate(360deg)}}</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>AllSee</title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link href="css/iconfont.css" type="text/css" rel="stylesheet"/>
 </head>
-
 <body>
+	<header class="mui-bar mui-bar-nav">
+	    <h1 class="mui-title">首页</h1>
+	</header>
+	<nav class="mui-bar mui-bar-tab">
+	    <a class="mui-tab-item mui-active" href="html/home.html">
+	        <span class="mui-icon mui-icon-home"></span>
+	        <span class="mui-tab-label">首页</span>
+	    </a>
+	    <a class="mui-tab-item" href="html/share.html">
+	        <span class="mui-icon icon iconfont icon-fenxiang"></span>
+	        <span class="mui-tab-label">分享</span>
+	    </a>
+	    <a class="mui-tab-item" href="html/mine.html">
+	        <span class="mui-icon mui-icon-person"></span>
+	        <span class="mui-tab-label">我的</span>
+	    </a>
+	</nav>
+	
+	<script src="js/mui.min.js"></script>
+	<script type="text/javascript" src="js/update.js" ></script>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+      	
+      	//设置默认打开首页显示的子页序号；
+		var Index=0;
+		//把子页的路径写在数组里面
+		var subpages = ['html/home.html','html/share.html','html/mine.html'];
 
-    <div class="container">
-
-        <div class="left">
-            <div id="user"></div>
-            <div id="posts"></div>
-            <div class="btns">
-                <button class="button" id="prev">← Newer Posts</button>
-                <button class="button" id="next">Older Posts →</button>
-            </div>
-
-            <div id="footer">
-                Powered by <a href="https://github.com/LoeiFy/Mirror" target="_blank">Mirror</a> & GitHub .
-                <a id="source" target="_blank">Source</a>
-                <span id="sandbox"> | <a>SandBox</a></span>
-            </div>
-
-            <div class="sandbox">
-                <div id="close">&#x2716;</div>
-                <form id="form" autocomplete="off">
-                    <p>Submit the imformation and preview</p>
-                    <input type="text" name="title" placeholder="Blog Title">
-                    <input type="text" name="user" placeholder="GitHub Username">
-                    <input type="text" name="repo" placeholder="GitHub Repo">
-                    <input type="text" name="authors" placeholder="Authors Filter(Optional)">
-                    <input type="number" name="per_page" placeholder="Number of Per Page">
-                    <button type="submit" name="submit" class="button">Start</button>
-                </form>
-            </div>
-        </div>
-
-
-        <div class="right">
-            <div id="post"></div>
-        </div>
-
-    </div>
-
-<script type="text/javascript" src="/build.c4688d3ba5719cd2510e.js"></script></body>
-
+		//所有的plus-*方法写在mui.plusReady中或者后面。
+		mui.plusReady(function() {
+			plus.screen.lockOrientation("portrait-primary");
+			checkUpdate();
+			//获取当前页面所属的Webview窗口对象
+			var self = plus.webview.currentWebview();
+			for (var i = 0; i < 3; i++) {
+				//创建webview子页
+				var sub = plus.webview.create(
+					subpages[i], //子页url
+					subpages[i], //子页id
+					{
+						top: '45px',//设置距离顶部的距离
+						bottom: '50px'//设置距离底部的距离
+					}
+				);
+				//如不是我们设置的默认的子页则隐藏，否则添加到窗口中
+				if (i != Index) {
+					sub.hide();
+				}
+				//将webview对象填充到窗口
+				self.append(sub);
+			}			
+		});
+		
+		//当前激活选项
+		var activeTab = subpages[Index],title=document.querySelector(".mui-title");
+		//选项卡点击事件
+		mui('.mui-bar-tab').on('tap', 'a', function(e) {
+			//获取目标子页的id
+			var targetTab = this.getAttribute('href');
+			if (targetTab == activeTab) {
+				return;
+			}
+			//更换标题
+			title.innerHTML = this.querySelector('.mui-tab-label').innerHTML;
+			//显示目标选项卡
+			plus.webview.show(targetTab);
+			//隐藏当前选项卡
+			plus.webview.hide(activeTab);
+			//更改当前活跃的选项卡
+			activeTab = targetTab;
+		});
+    </script>
+</body>
 </html>
