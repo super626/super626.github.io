@@ -133,6 +133,7 @@
 		<script src="../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" src="../js/playerplugin.js"></script>
 		<script type="text/javascript" src="../js/update.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 		<script type="text/javascript">
 			function getUrlParam(name) {
 				//构造一个含有目标参数的正则表达式对象
@@ -185,7 +186,7 @@
 				alert(cityId);
 				mui.ajax('https://ticket-api-m.mtime.cn/movie/detail.api?locationId=' + cityId + '&movieId=' + guid, {
 					data: {},
-					dataType: 'json', //服务器返回json格式数据
+					dataType: 'jsonp', //服务器返回json格式数据
 					type: 'get', //HTTP请求类型
 					timeout: 5000, //超时时间设置为10秒；
 					success: function(data) {
