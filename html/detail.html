@@ -186,12 +186,13 @@
 				plus.webview.currentWebview().hide("auto", 300);
 			}
 
-			//窗口隐藏时，重置页面数据
-			$(function() {
-				vm.content = content;
+            mui.plusReady(function(){
+            	    alert('plusready');
+            	    vm.content = content;
 				vm.director = director;
 				vm.title = title;
-			}
+            });
+			//窗口隐藏时，重置页面数据
 			function bannerImgClicked() {
 				playVideo(videourl);
 			}
