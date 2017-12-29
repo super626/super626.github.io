@@ -129,6 +129,7 @@
 
 		</div>
 
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 		<script src="../js/mui.min.js"></script>
 		<script src="../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" src="../js/playerplugin.js"></script>
@@ -147,6 +148,13 @@
 			}
 			var cityId = getUrlParam('cityId');
 			var guid = getUrlParam('movieId');
+			
+			$.getJSON("https://api.douban.com/v2/book/search?q=javascript&count=1&callback=?", function(data){
+                console.log(data);
+            });
+            $.getJSON('https://ticket-api-m.mtime.cn/movie/detail.api?locationId=' + cityId + '&movieId=' + guid, function(data){
+                console.log(data);
+            });
 
 			mui.init({
 				swipeBack: true
