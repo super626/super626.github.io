@@ -1,5 +1,5 @@
-var devBaseUrl = "http://100.allsee.applinzi.com/";
-var pubBaseUrl = "http://allsee.applinzi.com/";
+var devBaseUrl = "https://100.allsee.applinzi.com/";
+var pubBaseUrl = "https://allsee.applinzi.com/";
 var baseUrl = devBaseUrl;
 var checkUrl = baseUrl + "checkupdate";
 var postshare = baseUrl + "postshare";
