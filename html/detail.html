@@ -153,6 +153,7 @@
 			var director = getUrlParam('director');
 			var cover = getUrlParam('cover');
 			var content = getUrlParam('content');
+			var title = getUrlParam('title');
 
 			mui.init({
 				swipeBack: true
@@ -162,7 +163,7 @@
 			function getDefaultData() {
 				return {
 					cover: '../img/videoloading.jpg',
-					title: '',
+					title: title,
 					director: '',
 					actors: '',
 					time: '',
