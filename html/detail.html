@@ -162,12 +162,12 @@
 
 			function getDefaultData() {
 				return {
-					cover: '../img/videoloading.jpg',
+					cover: cover,
 					title: title,
-					director: '',
-					actors: '',
-					time: '',
-					content: ''
+					director: director,
+					actors: actors,
+					time: mins,
+					content: content
 				}
 			}
 
@@ -187,7 +187,6 @@
 			}
 
 			$(function() {
-				alert('function()');
 				vm.content = content;
 				vm.director = director;
 				vm.title = title;
