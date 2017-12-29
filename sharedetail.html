@@ -121,6 +121,19 @@
 				<p id="kr-article-article" class="article-content">{{content}}</p>
 
 			</div>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-right" src="img/320X320.png">
+						<div class="mui-media-body">
+							更多精彩内容请下载AllSee播放器
+							<p class="mui-ellipsis">热门电影资讯，多种视频格式支持，手机也可以看电脑上的大片（飞屏技术），2D转3D技术，普通视频也可以看3D大片，一切尽在AllSee播放器。</p>
+							<button type="button" onclick="onDownload()" class="mui-btn mui-btn-blue">去下载</button>
+						</div>
+					</a>
+				</li>
+
+			</ul>
 
 		</div>
 
@@ -151,7 +164,7 @@
 
 			function getDefaultData() {
 				return {
-					cover: '../img/videoloading.jpg',
+					cover: '/img/videoloading.jpg',
 					title: '',
 					director: '',
 					actors: '',
@@ -178,6 +191,19 @@
 				vm.time = mins;
 				vm.actors = actors;
 			});
+
+			function onDownload() {
+				var u = navigator.userAgent,
+					app = navigator.appVersion;
+				var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器  
+				var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端   
+				if (isiOS) {
+					window.location.href='https://itunes.apple.com/cn/app/allsee播放器/id1318717757?mt=8';
+				}
+				else if (isAndroid) {
+					alert('Android版本稍后上线');
+				}
+			}
 		</script>
 	</body>
 
