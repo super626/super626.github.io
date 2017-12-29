@@ -149,12 +149,6 @@
 			var cityId = getUrlParam('cityId');
 			var guid = getUrlParam('movieId');
 			
-			$.getJSON("https://api.douban.com/v2/book/search?q=javascript&count=1&callback=?", function(data){
-                console.log(data);
-            });
-            $.getJSON('https://ticket-api-m.mtime.cn/movie/detail.api?locationId=' + cityId + '&movieId=' + guid +'&callback=?', function(data){
-                console.log(data);
-            });
 
 			mui.init({
 				swipeBack: true
@@ -188,16 +182,11 @@
 			}
 
 			//窗口隐藏时，重置页面数据
-			mui.plusReady(function() {
-				alert(guid);
-				alert(cityId);
-				mui.ajax('https://ticket-api-m.mtime.cn/movie/detail.api?locationId=' + cityId + '&movieId=' + guid, {
-					data: {},
-					dataType: 'jsonp', //服务器返回json格式数据
-					type: 'get', //HTTP请求类型
-					timeout: 5000, //超时时间设置为10秒；
-					success: function(data) {
-						if(data.hasOwnProperty('data') && data.data.hasOwnProperty('basic')) {
+//			$(function() {
+				
+            $.getJSON('https://ticket-api-m.mtime.cn/movie/detail.api?locationId=' + cityId + '&movieId=' + guid +'&callback=?', function(data){
+                console.log(data);
+                if(data.hasOwnProperty('data') && data.data.hasOwnProperty('basic')) {
 							var basicdata = data.data.basic;
 							if(basicdata.hasOwnProperty('video')) {
 								if(basicdata.video.hasOwnProperty('hightUrl')) {
@@ -229,13 +218,9 @@
 								}
 							}
 						}
-					},
-					error: function(xhr, type, errorThrown) {
-						//异常处理；
-						mui.toast("获取数据失败");
-					}
-				});
-			});
+            });
+            
+//			}
 
 			function bannerImgClicked() {
 				playVideo(videourl);
