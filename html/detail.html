@@ -102,12 +102,7 @@
 			<!--顶部banner图 开始-->
 			<div id="kr-article-banner" class="kr-article-banner banner">
 				<div id="kr-article-cover" class="kr-article-cover">
-					<video :src="videourl"></video>
 					<img :src="cover">
-					<div id="waitingbar" class=" mui-progressbar mui-progressbar-infinite waitingprogress">
-						<span></span>
-					</div>
-					<img src="../img/detail-play.png" id="playBtn" style="display: none;" onclick="bannerImgClicked()" class="playbtn" />
 				</div>
 
 			</div>
@@ -132,8 +127,6 @@
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 		<script src="../js/mui.min.js"></script>
 		<script src="../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript" src="../js/playerplugin.js"></script>
-		<script type="text/javascript" src="../js/update.js"></script>
 		<script type="text/javascript">
 			function getUrlParam(name) {
 				//构造一个含有目标参数的正则表达式对象
@@ -181,11 +174,6 @@
 				}
 			});
 
-			//重写返回逻辑
-			mui.back = function() {
-				plus.webview.currentWebview().hide("auto", 300);
-			}
-
 			$(function() {
 				vm.content = content;
 				vm.director = director;
@@ -194,10 +182,6 @@
 				vm.time = mins;
 				vm.actors = actors;
 			});
-			//窗口隐藏时，重置页面数据
-			function bannerImgClicked() {
-				playVideo(videourl);
-			}
 		</script>
 	</body>
 
