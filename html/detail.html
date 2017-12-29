@@ -4,7 +4,6 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../css/mui.min.css" rel="stylesheet" />
 		<header class="mui-bar mui-bar-nav">
@@ -186,7 +185,6 @@
 //			$(function() {
 				
 //          $.getJSON('https://ticket-api-m.mtime.cn/movie/detail.api?locationId=' + cityId + '&movieId=' + guid +'&callback=?', function(data){
-	        alert(shareMovies);
 	        $.getJSON( shareMovies + '?cityId=' + cityId + '&movieId=' + guid +'&callback=?', function(data){
                 
                 if(data.hasOwnProperty('data') && data.data.hasOwnProperty('basic')) {
