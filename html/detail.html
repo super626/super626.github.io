@@ -152,7 +152,7 @@
 			$.getJSON("https://api.douban.com/v2/book/search?q=javascript&count=1&callback=?", function(data){
                 console.log(data);
             });
-            $.getJSON('https://ticket-api-m.mtime.cn/movie/detail.api?locationId=' + cityId + '&movieId=' + guid, function(data){
+            $.getJSON('https://ticket-api-m.mtime.cn/movie/detail.api?locationId=' + cityId + '&movieId=' + guid +'&callback=?', function(data){
                 console.log(data);
             });
 
