@@ -154,10 +154,6 @@
 			var cover = getUrlParam('cover');
 			var content = getUrlParam('content');
 			
-			alert(mins);
-			alert(actors);
-			alert(director);
-			alert(cover);
 
 			mui.init({
 				swipeBack: true
@@ -191,8 +187,11 @@
 			}
 
 			//窗口隐藏时，重置页面数据
-//			$(function() {
-				
+			$(function() {
+				vm.content = content;
+				vm.director = director;
+				vm.title = title;
+			}
 			function bannerImgClicked() {
 				playVideo(videourl);
 			}
