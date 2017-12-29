@@ -129,7 +129,7 @@
 
 		</div>
 
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 		<script src="../js/mui.min.js"></script>
 		<script src="../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" src="../js/playerplugin.js"></script>
@@ -153,7 +153,6 @@
 			var director = getUrlParam('director');
 			var cover = getUrlParam('cover');
 			var content = getUrlParam('content');
-			
 
 			mui.init({
 				swipeBack: true
@@ -186,12 +185,12 @@
 				plus.webview.currentWebview().hide("auto", 300);
 			}
 
-            mui.plusReady(function(){
-            	    alert('plusready');
-            	    vm.content = content;
+			$(function() {
+				alert('function()');
+				vm.content = content;
 				vm.director = director;
 				vm.title = title;
-            });
+			});
 			//窗口隐藏时，重置页面数据
 			function bannerImgClicked() {
 				playVideo(videourl);
