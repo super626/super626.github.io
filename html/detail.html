@@ -148,7 +148,11 @@
 			}
 			var cityId = getUrlParam('cityId');
 			var guid = getUrlParam('movieId');
-			
+			var mins = getUrlParam('mins');
+			var actors = getUrlParam('actors');
+			var director = getUrlParam('director');
+			var cover = getUrlParam('cover');
+			var content = getUrlParam('content');
 
 			mui.init({
 				swipeBack: true
@@ -157,12 +161,12 @@
 
 			function getDefaultData() {
 				return {
-					cover: '../img/videoloading.jpg',
-					title: 'ssdfsf',
-					director: '',
-					actors: '',
-					time: '',
-					content: 'sdfs'
+					cover: cover,
+					title: title,
+					director: director,
+					actors: actors,
+					time: mins,
+					content: content
 				}
 			}
 
@@ -184,45 +188,6 @@
 			//窗口隐藏时，重置页面数据
 //			$(function() {
 				
-//          $.getJSON('https://ticket-api-m.mtime.cn/movie/detail.api?locationId=' + cityId + '&movieId=' + guid +'&callback=?', function(data){
-	        $.getJSON( shareMovies + '?cityId=' + cityId + '&movieId=' + guid +'&callback=?', function(data){
-                alert(shareMovies);
-                if(data.hasOwnProperty('data') && data.data.hasOwnProperty('basic')) {
-							var basicdata = data.data.basic;
-							if(basicdata.hasOwnProperty('video')) {
-								if(basicdata.video.hasOwnProperty('hightUrl')) {
-									vm.videourl = basicdata.video.hightUrl;
-								} else if(basicdata.video.hasOwnProperty('url')) {
-									vm.videourl = basicdata.video.url;
-								}
-							}
-							if (basicdata.hasOwnProperty('img')){
-								vm.cover = basicdata.img;
-							}
-							if (basicdata.hasOwnProperty('name')){
-								vm.title = basicdata.name;
-							}
-							if (basicdata.hasOwnProperty('mins')){
-								vm.time = basicdata.mins;
-							}
-							if(basicdata.hasOwnProperty('story')) {
-								vm.content = basicdata.story;
-							}
-							if(basicdata.hasOwnProperty('director')) {
-								vm.director = basicdata.director.name;
-							}
-							if(basicdata.hasOwnProperty('actors')) {
-								vm.actors = '';
-								for(var i = 0; i < basicdata.actors.length; i++) {
-									if(basicdata.actors[i].hasOwnProperty('name') && basicdata.actors[i].name !== '')
-										vm.actors += basicdata.actors[i].name + ';';
-								}
-							}
-						}
-            });
-            
-//			}
-
 			function bannerImgClicked() {
 				playVideo(videourl);
 			}
