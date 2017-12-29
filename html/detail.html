@@ -186,7 +186,7 @@
 				
 //          $.getJSON('https://ticket-api-m.mtime.cn/movie/detail.api?locationId=' + cityId + '&movieId=' + guid +'&callback=?', function(data){
 	        $.getJSON( shareMovies + '?cityId=' + cityId + '&movieId=' + guid +'&callback=?', function(data){
-                
+                alert(shareMovies);
                 if(data.hasOwnProperty('data') && data.data.hasOwnProperty('basic')) {
 							var basicdata = data.data.basic;
 							if(basicdata.hasOwnProperty('video')) {
