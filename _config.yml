@@ -14,6 +14,8 @@ url: "https://super626.github.io"
 
 # baseurl: /personal-jekyll-theme
 
+baseurl: /super626.github.io
+
 # Google tracking id
 
 google-tracking-id: ""
