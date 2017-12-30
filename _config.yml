@@ -30,9 +30,9 @@ force-https: True
 # HTML Head #
 #############
 
-lang: "en"
-author: "John Smith"
-title: "{ John Smith }"
+lang: “cn”
+author: “杨潇”
+title: "{ 杨潇 }"
 description: "Blog and website of John Smith, blogging mainly for tech. Opinions expressed are mine."
 keywords: "smith, jones, personal, jekyll, theme"
 favicon: "/img/favicon.ico"
