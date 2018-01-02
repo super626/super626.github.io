@@ -166,16 +166,8 @@ author_blurb_image: "/img/author.png"
 ##################
 
 social:
-  - title: "facebook"
-    url: "https://facebook.com/"
-  - title: "twitter"
-    url: "https://twitter.com/"
   - title: "github"
-    url: "https://github.com/PanosSakkos/personal-jekyll-theme"
-  - title: "bitcoin"
-    url: "https://blockchain.info/address/1LHuKC9Em3KA5yoZaf7nngnNdf9K7s2gSi"
-  - title: "rss"
-    url: "/feed.xml"
+    url: "https://github.com/super626"
 
 ############
 # 404 page #
@@ -198,7 +190,7 @@ keybase-in-footer: True
 # Sections shown in the index page
 
 pages_list:
-  About: 'about'
+  关于: 'about'
   Blog: 'latest-post'
   Timeline: 'timeline'
   Contact: 'contact'
