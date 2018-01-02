@@ -190,9 +190,9 @@ keybase-in-footer: True
 # Sections shown in the index page
 
 pages_list:
-  关于: '关于'
-  产品: '产品'
-  Timeline: '友情链接'
+  About: 'about'
+  Blog: 'latest-post'
+  Timeline: 'timeline'
   Contact: 'contact'
 
 # Exclusion list from the generated _site
