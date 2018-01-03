@@ -192,8 +192,8 @@ keybase-in-footer: True
 pages_list:
   关于: 'about'
   产品: 'latest-post'
-  Timeline: 'timeline'
   联系我们: 'contact'
+  友情链接: 'timeline'
 
 # Exclusion list from the generated _site
 
