@@ -32,7 +32,7 @@ force-https: True
 
 lang: “cn”
 author: “super626”
-title: "{ super626 group }"
+title: "{ super626 }"
 description: "Blog and website of John Smith, blogging mainly for tech. Opinions expressed are mine."
 keywords: "ar, vr, h5, game, super626"
 favicon: "/img/favicon.ico"
@@ -194,7 +194,7 @@ pages_list:
   博客: 'latest-post'
   联系: 'contact'
   链接: 'timeline'
-  AllSee播放器: 'allsee'
+#  AllSee播放器: 'allsee'
 
 # Exclusion list from the generated _site
 
