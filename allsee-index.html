@@ -1,0 +1,174 @@
+
+
+AllSee播放器不同于一般的VR聚合平台，它致力于打造一款高质量的超轻量型3D/VR播放APP，为用户自己的视频内容服务。本播放器亮点如下：
+
+【2D视频转置技术】任意2D视频均可以通过VR眼镜观看3D效果，2D、3D、宽屏、窄屏随意切换，在家也可以体验电影院3D大片感觉。
+【PC电脑飞屏技术】通过电脑飞屏客户端，可以在手机上观看电脑中的视频内容。
+
+作为2D、3D、VR全视频观看神器，你可以：
+
+1. 热门电影预告信息。
+2. 2D、3D、VR全部格式视频源支持，均可在2D模式、VR眼镜模式下观看，任意2D视频也可当作为3D大片看。
+3. 跨屏观看PC电脑上的视频。
+4. 分享好看好玩视频给其他网友。
+
+AllSee播放器详情<https://super626.github.io/allsee-indx.html/>
+
+AllSee播放器苹果版下载<https://itunes.apple.com/cn/app/allsee播放器/id1318717757?mt=8/>
+
+飞屏PC端下载<https://https://super626.github.io/download/AllSee飞屏客户端.zip>
+
+友情链接:Cocos3D课程<a href="http://edu.51cto.com/lecturer/7609335.html"> </a> AllSee播放器iPhone版<a href="https://itunes.apple.com/cn/app/allsee播放器/id1318717757?mt=8"> </a> AllSee播放器Android版稍后奉上<a href=""> </a>
+
+<!doctype html>
+<html>
+    
+    <head>
+        <meta charset="UTF-8">
+            <title>AllSee播放器——2D/3D/VR视频观看神器</title>
+            <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+            <link href="../css/mui.min.css" rel="stylesheet" />
+            <style type="text/css">
+                .mui-media {
+                    font-size: 14px;
+                }
+            
+            .mui-table-view .mui-media-object {
+                max-width: initial;
+                width: 90px;
+                height: 70px;
+            }
+            
+            .meta-info {
+                position: absolute;
+                left: 115px;
+                right: 15px;
+                bottom: 8px;
+                color: #8f8f94;
+            }
+            
+            .meta-info .author,
+            .meta-info .time {
+                display: inline-block;
+            }
+            
+            .meta-info .time {
+                float: right;
+            }
+            
+            .mui-table-view:before,
+            .mui-table-view:after {
+                height: 0;
+            }
+            
+            .mui-content>.mui-table-view:first-child {
+                margin-top: 1px;
+            }
+            
+            .banner {
+                height: 180px;
+                overflow: hidden;
+                position: relative;
+                background-position: center;
+                background-color: #ccc;
+            }
+            
+            .banner img {
+                width: 100%;
+                height: auto;
+            }
+            
+            .banner .title {
+                position: absolute;
+                left: 15px;
+                bottom: 15px;
+                width: 90%;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 21px;
+                color: black;
+                z-index: 11;
+            }
+            </style>
+            </head>
+    
+    <body>
+        
+        <div class="mui-content" id="news">
+            <div id="slider" class="mui-slider" style="height: 200px;">
+                <div class="mui-slider-group mui-slider-loop">
+                    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+                    <div class="mui-slider-item mui-slider-item-duplicate">
+                        <a href="#">
+                            <img src="../img/vrdevice.jpg" onclick="bannerImg3Clicked()">
+                                </a>
+                    </div>
+                    <!-- 第一张 -->
+                    <div class="mui-slider-item">
+                        <a href="#">
+                            <img :src="banner.cover" onclick="bannerImg1Clicked()">
+                                </a>
+                    </div>
+                    <!-- 第二张 -->
+                    <div class="mui-slider-item">
+                        <a href="#">
+                            <img src="../img/home_banner1-1.jpg" onclick="bannerImg2Clicked()">
+                                </a>
+                    </div>
+                    <!-- 第三张 -->
+                    <div class="mui-slider-item">
+                        <a href="#">
+                            <img src="../img/vrdevice.jpg" onclick="bannerImg3Clicked()">
+                                </a>
+                    </div>
+                    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+                    <div class="mui-slider-item mui-slider-item-duplicate">
+                        <a href="#">
+                            <img :src="banner.cover" onclick="bannerImg1Clicked()">
+                                </a>
+                    </div>
+                </div>
+                <div class="mui-slider-indicator">
+                    <div class="mui-indicator mui-active"></div>
+                    <div class="mui-indicator"></div>
+                    <div class="mui-indicator"></div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <p>
+        AllSee播放器不同于一般的VR聚合平台，它致力于打造一款高质量的超轻量型3D/VR播放APP，为用户自己的视频内容服务。本播放器亮点如下：
+        </p>
+        <p>
+        【2D视频转置技术】任意2D视频均可以通过VR眼镜观看3D效果，2D、3D、宽屏、窄屏随意切换，在家也可以体验电影院3D大片感觉。
+        【PC电脑飞屏技术】通过电脑飞屏客户端，可以在手机上观看电脑中的视频内容。
+        </p>
+        
+        <p>
+        作为2D、3D、VR全视频观看神器，你可以：
+        </p>
+        <li>1. 热门电影预告信息。</li>
+        <li>2. 2D、3D、VR全部格式视频源支持，均可在2D模式、VR眼镜模式下观看，任意2D视频也可当作为3D大片看。<li>
+        <li>3. 跨屏观看PC电脑上的视频。</li>
+        <li>4. 分享好看好玩视频给其他网友。</li>
+        
+        <p>
+        AllSee播放器详情<https://super626.github.io/allsee-indx.html/>
+        </p>
+        
+        <p>
+        AllSee播放器苹果版下载<https://itunes.apple.com/cn/app/allsee播放器/id1318717757?mt=8/>
+        </p>
+        
+        <p>
+        飞屏PC端下载<https://https://super626.github.io/download/AllSee飞屏客户端.zip>
+        </p>
+        
+        <script src="../js/mui.min.js"></script>
+        <script src="../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+        
+    </body>
+    
+</html>
