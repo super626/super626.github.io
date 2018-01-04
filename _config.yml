@@ -191,9 +191,10 @@ keybase-in-footer: True
 
 pages_list:
   关于: 'about'
-  产品: 'latest-post'
+  AllSee播放器: 'allsee'
+  Blog: 'latest-post'
   联系: 'contact'
-  友情链接: 'timeline'
+  链接: 'timeline'
 
 # Exclusion list from the generated _site
 
