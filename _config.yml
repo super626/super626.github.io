@@ -194,7 +194,7 @@ pages_list:
   博客: 'latest-post'
   联系: 'contact'
   链接: 'timeline'
-#  AllSee播放器: 'allsee'
+  AllSee播放器: 'allsee'
 
 # Exclusion list from the generated _site
 
