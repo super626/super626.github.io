@@ -128,7 +128,7 @@
 						<div class="mui-media-body">
 							更多精彩内容请下载AllSee播放器
 							<p class="mui-ellipsis-2" onclick="onDownload()">手机也可以看电脑上的大片, 2D转3D技术，飞屏技术，热门电影资讯，尽在AllSee播放器。</p>
-							
+
 						</div>
 					</a>
 				</li>
@@ -196,13 +196,18 @@
 					app = navigator.appVersion;
 				var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器  
 				var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端   
-				if (isiOS) {
-					window.location.href='https://itunes.apple.com/cn/app/allsee播放器/id1318717757?mt=8';
+				if(isiOS) {
+					window.location.href = 'https://itunes.apple.com/cn/app/allsee播放器/id1318717757?mt=8';
+				} else if(isAndroid) {
+					var u = navigator.userAgent;
+					if(/MicroMessenger/gi.test(u) {
+							// 引导用户在浏览器中打开
+							alert('请选择右上角三个点，在浏览器中打开');
+							return;
+						}
+						window.location.href = 'https://super626.github.io/download/allsee1.1.0.apk';
+					}
 				}
-				else if (isAndroid) {
-					window.location.href='https://super626.github.io/download/allsee1.1.0.apk';
-				}
-			}
 		</script>
 	</body>
 
