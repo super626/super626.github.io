@@ -1,148 +1,394 @@
-<!doctype html>
-<html>
-    
-    <head>
-        <meta charset="UTF-8">
-            <title>AllSee播放器——2D/3D/VR视频观看神器</title>
-            <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-            <link href="css/mui.min.css" rel="stylesheet" />
-            <style type="text/css">
-                .mui-media {
-                    font-size: 14px;
-                }
-            
-            .mui-table-view .mui-media-object {
-                max-width: initial;
-                width: 90px;
-                height: 70px;
-            }
-            
-            .meta-info {
-                position: absolute;
-                left: 115px;
-                right: 15px;
-                bottom: 8px;
-                color: #8f8f94;
-            }
-            
-            .meta-info .author,
-            .meta-info .time {
-                display: inline-block;
-            }
-            
-            .meta-info .time {
-                float: right;
-            }
-            
-            .mui-table-view:before,
-            .mui-table-view:after {
-                height: 0;
-            }
-            
-            .mui-content>.mui-table-view:first-child {
-                margin-top: 1px;
-            }
-            
-            .banner {
-                height: 180px;
-                overflow: hidden;
-                position: relative;
-                background-position: center;
-                background-color: #ccc;
-            }
-            
-            .banner img {
-                width: 100%;
-                height: auto;
-            }
-            
-            .banner .title {
-                position: absolute;
-                left: 15px;
-                bottom: 15px;
-                width: 90%;
-                font-size: 16px;
-                font-weight: 400;
-                line-height: 21px;
-                color: black;
-                z-index: 11;
-            }
-            </style>
-            </head>
-    
-    <body>
-        
-        <div class="mui-content" id="news">
-            <div id="slider" class="mui-slider" style="height: 500px; background-position: center">
-                <div class="mui-slider-group mui-slider-loop">
-                    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
-                    <div class="mui-slider-item mui-slider-item-duplicate">
-                        <a href="#">
-                            <img src="img/allseebanner2.png" onclick="">
-                                </a>
-                    </div>
-                    <!-- 第一张 -->
-                    <div class="mui-slider-item">
-                        <a href="#">
-                            <img src="img/allseebanner.png" onclick="">
-                                </a>
-                    </div>
-                    <!-- 第二张 -->
-                    <div class="mui-slider-item">
-                        <a href="#">
-                            <img src="img/allseebanner2.png" onclick="">
-                                </a>
-                    </div>
-                    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
-                    <div class="mui-slider-item mui-slider-item-duplicate">
-                        <a href="#">
-                            <img src="img/allseebanner.png" >
-                                </a>
-                    </div>
-                </div>
-                <div class="mui-slider-indicator">
-                    <div class="mui-indicator mui-active"></div>
-                    <div class="mui-indicator"></div>
-                </div>
-            </div>
-            
-        </div>
-        
-        <p>
-        AllSee播放器不同于一般的VR聚合平台，它致力于打造一款高质量的超轻量型3D/VR播放APP，为用户自己的视频内容服务。本播放器亮点如下：
-        </p>
-        <p>
-        <li>【2D视频转置技术】任意2D视频均可以通过VR眼镜观看3D效果，2D、3D、宽屏、窄屏随意切换，在家也可以体验电影院3D大片感觉。</li>
-        <li>【PC电脑飞屏技术】通过电脑飞屏客户端，可以在手机上观看电脑中的视频内容。</li>
-        </p>
-        
-        <p>
-        作为2D、3D、VR全视频观看神器，你可以：
-        </p>
-        <li>1. 热门电影预告信息。</li>
-        <li>2. 2D、3D、VR全部格式视频源支持，均可在2D模式、VR眼镜模式下观看，任意2D视频也可当作为3D大片看。<li>
-        <li>3. 跨屏观看PC电脑上的视频。</li>
-        <li>4. 分享好看好玩视频给其他网友。</li>
-        
-        <p>
-        AllSee播放器详情<https://super626.github.io/allsee-indx.html/>
-        </p>
-        
-        <p>
-        AllSee播放器苹果版下载<https://itunes.apple.com/cn/app/allsee播放器/id1318717757?mt=8/>
-        </p>
-        
-        <p>
-        飞屏PC端下载<https://https://super626.github.io/download/AllSee飞屏客户端.zip>
-        </p>
-        
-        <p>
-        Cocos3D课程<a href="http://edu.51cto.com/lecturer/7609335.html">
-        </p>
-        
-        <script src="js/mui.min.js"></script>
-        <script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
-        
-    </body>
-    
+<!DOCTYPE html>
+<!--
+  Name: Snow - Minimal & Clean Portfolio HTML Template
+  Version: 1.0.1
+  Author: nK, unvab
+  Website: https://nkdev.info, http://unvab.com/
+  Purchase: https://nkdev.info
+  Support: https://nk.ticksy.com
+  License: You must have a valid license purchased only from ThemeForest (the above link) in order to legally use the theme for your project.
+  Copyright 2017.
+-->
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<title>AllSee播放器——2D/3D/VR视频观看神器</title>
+
+		<meta name="description" content="AllSee播放器——2D/3D/VR视频观看神器">
+		<meta name="keywords" content="AllSee, 视频, 播放器, VR, 3D">
+		<meta name="author" content="super626">
+
+		<link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- START: Styles -->
+
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i%7cWork+Sans:400,500,700" rel="stylesheet" type="text/css">
+
+		<link rel="stylesheet" href="assets/css/combined.css">
+
+		<!-- END: Styles -->
+
+	</head>
+
+	<body>
+
+		<header class="nk-header nk-header-opaque">
+			<!--
+        START: Navbar
+    -->
+			<nav class="nk-navbar nk-navbar-top">
+				<div class="container">
+					<div class="nk-nav-table">
+						<a href="index.html" class="nk-nav-logo">
+							<img src="assets/images/logo-light.svg" alt="" width="85" class="nk-nav-logo-onscroll">
+							<img src="assets/images/logo.svg" alt="" width="85">
+						</a>
+
+						<ul class="nk-nav nk-nav-right hidden-md-down" data-nav-mobile="#nk-nav-mobile">
+							<li>
+								<a href="allsee-index.html#about">关于AllSee</a>
+							</li>
+							<li>
+								<a href="allsee-index.html#feiping">飞屏</a>
+							</li>
+							<li>
+								<a href="allsee-index.html#aboutvr">关于VR</a>
+							</li>
+							<li class="active">
+								<a href="allsee-index.html#download">下载AllSee</a>
+							</li>
+							<li>
+								<a href="index.html">Super626首页</a>
+							</li>
+						</ul>
+
+						<ul class="nk-nav nk-nav-right nk-nav-icons">
+							<li class="single-icon hidden-lg-up">
+								<a href="#" class="nk-navbar-full-toggle">
+									<span class="nk-icon-burger">
+                                    <span class="nk-t-1"></span>
+									<span class="nk-t-2"></span>
+									<span class="nk-t-3"></span>
+									</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<!-- END: Navbar -->
+
+		</header>
+
+		<!--
+    START: Navbar Mobile
+-->
+		<nav class="nk-navbar nk-navbar-full nk-navbar-align-center" id="nk-nav-mobile">
+			<div class="nk-navbar-bg">
+				<div class="bg-image" style="background-image: url('assets/images/bg-menu.jpg')"></div>
+			</div>
+			<div class="nk-nav-table">
+				<div class="nk-nav-row">
+					<div class="container">
+						<div class="nk-nav-header">
+
+							<div class="nk-nav-logo">
+								<a href="index.html" class="nk-nav-logo">
+									<img src="assets/images/logo-light.svg" alt="" width="85">
+								</a>
+							</div>
+
+							<div class="nk-nav-close nk-navbar-full-toggle">
+								<span class="nk-icon-close"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nk-nav-row-full nk-nav-row">
+					<div class="nano">
+						<div class="nano-content">
+							<div class="nk-nav-table">
+								<div class="nk-nav-row nk-nav-row-full nk-nav-row-center nk-navbar-mobile-content">
+									<ul class="nk-nav">
+										<!-- Here will be inserted menu from [data-mobile-menu="#nk-nav-mobile"] -->
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="nk-nav-row">
+					<div class="container">
+						<div class="nk-nav-social">
+							<ul>
+								<li>
+									<a href="https://twitter.com/nkdevv"><i class="fa fa-twitter"></i></a>
+								</li>
+								<li>
+									<a href="#/unvabdesign/"><i class="fa fa-facebook"></i></a>
+								</li>
+								<li>
+									<a href="https://dribbble.com/_nK"><i class="fa fa-dribbble"></i></a>
+								</li>
+								<li>
+									<a href="https://www.instagram.com/unvab/"><i class="fa fa-instagram"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<!-- END: Navbar Mobile -->
+
+		<div class="nk-main">
+
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 offset-lg-2">
+
+						<!-- START: Posts List -->
+						<div class="nk-blog-isotope nk-isotope nk-isotope-gap nk-isotope-1-cols">
+
+							<!-- START: Post -->
+							<div class="nk-isotope-item" data-filter="互联网">
+								<div class="nk-blog-post">
+
+									<div class="nk-post-thumb">
+										<a>
+											<img src="assets/images/allseebanner.jpg" alt="" class="nk-img-stretch">
+										</a>
+										<div class="nk-post-category">
+											<a href="#">互联网</a>
+										</div>
+									</div>
+									<h2 class="nk-post-title h4"><a id="about">关于AllSee</a></h2>
+
+									<div class="nk-post-text">
+										<p>AllSee播放器不同于一般的VR聚合平台，它致力于打造一款高质量的超轻量型3D/VR播放APP，为用户自己的视频内容服务。本播放器亮点如下：</p>
+										<p>【2D视频转置技术】任意2D视频均可以通过VR眼镜观看3D效果，2D、3D、宽屏、窄屏随意切换，在家也可以体验电影院3D大片感觉。</p>
+										<p>【PC电脑飞屏技术】通过电脑飞屏客户端，可以在手机上观看电脑中的视频内容。</p>
+										<p>作为2D、3D、VR全视频观看神器，你可以：</p>
+										<p>1. 热门电影预告信息。</p>
+										<p>2. 2D、3D、VR全部格式视频源支持，均可在2D模式、VR眼镜模式下观看，任意2D视频也可当作为3D大片看。</p>
+										<p>3. 跨屏观看PC电脑上的视频。</p>
+										<p>4. 分享好看好玩视频给其他网友。</p>
+									</div>
+								</div>
+							</div>
+							<!-- END: Post -->
+
+							<!-- START: Post -->
+							<div class="nk-isotope-item" data-filter="互联网">
+								<div class="nk-blog-post">
+									<!-- START: Partners -->
+									<div class="bg-white">
+										<div class="container">
+											<div class="nk-carousel-2 nk-carousel-x3 nk-carousel-no-margin nk-carousel-all-visible">
+												<div class="nk-carousel-inner">
+													<div>
+														<div>
+															<div class="nk-box-1">
+																<img src="assets/images/feiping2.jpg" title="" class="nk-img-fit">
+																<label>解压飞屏PC端</label>
+															</div>
+														</div>
+													</div>
+													<div>
+														<div>
+															<div class="nk-box-1">
+																<img src="assets/images/feiping3.jpg" onclick="" alt="" class="nk-img-fit">
+																<label>拖入视频文件</label>
+															</div>
+														</div>
+													</div>
+													<div>
+														<div>
+															<div class="nk-box-1">
+																<img src="assets/images/feiping4.jpg" onclick="" alt="" class="nk-img-fit">
+																<label>扫码播放</label>
+															</div>
+														</div>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- END: Partners -->
+									<h2 class="nk-post-title h4"><a id="feiping">飞屏</a></h2>
+
+									<div class="nk-post-text">
+										<p>1. 下载飞屏PC客户端</p>
+										<p>2. 解压压缩包，运行飞屏客户端.exe</p>
+										<p>3. 将视频文件拖入飞屏窗口，如果有防火墙提示，点击允许</p>
+										<p>4. 用APP扫一扫飞屏客户端生成的二维码，或者在网络播放中输入飞屏客户端下方的网络地址</p>
+										<p>5. 在手机APP上享受网络大片</p>
+										<p>6. MAC用户用如下方法观看电脑上的视频:</p>
+										<p>1）启动Web服务器，Finder-应用程序-实用工具-终端， 输入命令：sudo apachectl start，sudo表示用root权限运行，输入密码，输入时无提示， 输入完后回车确认即可。
+										</p>
+										<p>2）按住Command+Shift+G，在前往文件夹中输入 /Library/WebServer/Documents，点击前往，将想看的电影文件拷入文件夹即可（如1.mp4）。
+										</p>
+										<p>3）查看MAC本机IP地址，进入系统偏好设置－网络-高级-TCP/IP即可查看本机IP地址（如192.168.1.100）。</p>
+										<p>4）观看在APP的网络播放中输入链接地址，如http://192.168.1.100/1.mp4点击播放即可。</p>
+										<p>7. 注意:飞屏功能需确保PC地址的可达性</p>
+										<p>1）PC具有外网地址，任意手机均可使用飞屏功能播放视频。一般通过WiFi上网的PC不具有外网地址， 确认PC是否具有外网地址的方法:在百度中搜索IP地址，即可显示本机IP， 查看本机IP地址是否与网页显示的IP地址相同，相同即为具有外网地址。
+										</p>
+										<p>2）PC不具有外网地址，这是多数情况，需确保PC和手机连接同一WiFi或者路由器。</p>
+										<p>3）不具有外网地址，能否让其他不在同一WiFi的人播放该视频呢？可以尝试下载Nat123， 将飞屏客户端显示的IP地址和端口转换成外网域名和端口，其他用户可以通过网络播放功能， 播放http://域名：端口/mp4文件的方法访问。
+										</p>
+									</div>
+								</div>
+							</div>
+							<!-- END: Post -->
+
+							<!-- START: Post -->
+							<div class="nk-isotope-item" data-filter="互联网">
+								<div class="nk-blog-post">
+
+									<div class="nk-carousel-2 nk-carousel-x3 nk-carousel-no-margin nk-carousel-all-visible">
+										<div class="nk-carousel-inner">
+											<div>
+												<div>
+													<div class="nk-box-1">
+														<img src="assets/images/feiping-cardboard.jpg" title="" class="nk-img-fit">
+														<label>VR眼镜</label>
+													</div>
+												</div>
+											</div>
+											<div>
+												<div>
+													<div class="nk-box-1">
+														<img src="assets/images/feiping3d.jpg" onclick="" alt="" class="nk-img-fit">
+														<label>3D视频</label>
+													</div>
+												</div>
+											</div>
+											<div>
+												<div>
+													<div class="nk-box-1">
+														<img src="assets/images/feiping-vr.jpg" onclick="" alt="" class="nk-img-fit">
+														<label>全景视频</label>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+									<h2 class="nk-post-title h4"><a id="aboutvr">关于VR</a></h2>
+
+									<div class="nk-post-text">
+										<p>VR是近年来比较热门的技术，中文名称虚拟现实，顾名思义就是用计算机手段模拟现实世界达到以假乱真的地步。通过视觉、听觉、触觉、 味觉的全方位模拟，使人无法分辨处于的是真实世界还是虚拟世界，早期的研究实现这种模拟的代价比较昂贵，Google推出的 cardboard为我们提供了这种的模拟的廉价方案，它硬件部分主要是两个镜片，通过软件将手机屏幕分成左右两个屏幕，左右屏幕的图像通过 左右镜片投射到人的左右眼，由于左右眼的图像存在一定的视差人们会感觉到立体物体的存在。手机和镜片封装在密闭环境中，再加上手机陀螺仪 感知人的朝向实时更新图像，会使人产生强烈的身临其境感。
+										</p>
+										<p>VR目前主要应用于仿真训练、古迹重建、游戏娱乐等领域。这些应用一般要求建立整个环境的3D模型，美术工作量比较巨大，还有另外一种VR应用， 全景视频，它通过多个摄像头拼接将场景360度无死角全方位拍摄下来，在播放时使用球状投影面，用户置身于球心，借助陀螺仪的帮助用户可以 观看球面各个方向的景色，仿佛置身于真正的场景中。
+										</p>
+										<p>视频根据片源的拍摄方法的不同我们可以分成3类：</p>
+										<p>1. 2D片源，即普通片源，通过一个相机制作完成，我们看到的大部分片源均为2D片源</p>
+										<p>2. 3D片源，片源使用两个相机模拟人的左右眼拍摄制作，在PC上通过普通播放器看到左右两幅画面，通过VR眼镜可以看到立体效果，电影院中的3D电影，在不戴眼镜时会看到有重影，戴上眼镜后将重影画面分成左右进入不同的眼镜进而形成立体成像</p>
+										<p>3. VR片源，片源来自全景相机拍摄合成，在PC上通过普通播放器看起来有变形，尤其上下，是一个球形面展到矩形上而成</p>
+										<p>原则上不同的片源需要配合不同的播放器进行观看，否则不能达到最佳观看效果，我们通过技术手段，去掉了这种限制，即任何片源都可以使用2D、VR两种效果来观看，片源类型无法自动识别，需要用户在AllSee播放器中自己选择正确的片源类型。</p>
+										<p>屏幕宽度：正常屏、宽屏、窄屏，当看到的视频被拉伸或者压缩时可以尝试这个按钮来切换屏幕设置，尤其对于3D视频，左右视频可以是全宽和半宽，全宽可以用正常屏观看，半宽正常屏看起来就是纵向拉伸的，需要用宽屏来观看。</p>
+
+									</div>
+									<div class="nk-carousel-2 nk-carousel-x1 nk-carousel-no-margin nk-carousel-all-visible">
+										<div class="nk-carousel-inner">
+											<div>
+												<div>
+													<div class="nk-box-1">
+														<img src="assets/images/Attachment1.png" title="" class="nk-img-fit">
+														<label>片源、显示</label>
+													</div>
+												</div>
+											</div>
+											<div>
+												<div>
+													<div class="nk-box-1">
+														<img src="assets/images/Attachment2.png" title="" class="nk-img-fit">
+														<label>屏幕切换</label>
+													</div>
+												</div>
+											</div>
+											<div>
+												<div>
+													<div class="nk-box-1">
+														<img src="assets/images/Attachment3.jpg" onclick="" alt="" class="nk-img-fit">
+														<label>2D片源3D显示</label>
+													</div>
+												</div>
+											</div>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END: Post -->
+							
+							<!-- START: Post -->
+							<div class="nk-isotope-item" data-filter="互联网">
+								<div class="nk-blog-post">
+
+									
+									<h2 class="nk-post-title h4"><a id="download">下载AllSee</a></h2>
+
+									<div>
+										<img src="assets/images/allseedownload.png"/>
+										<label></label>
+									</div>
+									<div class="nk-gap-4"></div>
+									<div>
+										<a href="https://super626.github.io/download/AllSee-feiping.zip" target="_blank" title="飞屏PC端下载">飞屏PC端下载</a>
+									</div>
+								</div>
+							</div>
+							<!-- END: Post -->
+
+						</div>
+						<!-- END: Posts List -->
+					</div>
+				</div>
+
+				<div class="nk-gap-4"></div>
+
+			</div>
+
+			<!--
+    START: Footer
+-->
+			<footer class="nk-footer">
+
+				<div class="nk-footer-cont">
+					<div class="container text-xs-center">
+						<div class="nk-footer-social">
+							<ul>
+
+							</ul>
+						</div>
+
+						<div class="nk-footer-text">
+							<p>2018 &copy; super626
+								<a href="https://super626.github.io/" target="_blank" title="专注互联网、H5、AR、VR技术及产品研究">专注互联网、H5、AR、VR技术及产品研究</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- END: Footer -->
+
+		</div>
+
+		<!-- START: Scripts -->
+
+		<script src="assets/js/combined.js"></script>
+
+		<!-- END: Scripts -->
+
+	</body>
+
 </html>
