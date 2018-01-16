@@ -1,0 +1,927 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eventSheets layout="MainScene" previous="" next="" version="2.2">
+  <item type="instance" UID="525"/>
+  <item type="instance" UID="523"/>
+  <item type="instance" UID="521"/>
+  <item type="instance" UID="519"/>
+  <item type="instance" UID="518"/>
+  <item type="instance" UID="437"/>
+  <item type="instance" UID="541"/>
+  <item type="instance" UID="539"/>
+  <item type="instance" UID="435">
+    <item initValue="0" variableType="number" variableName="tank1" type="variable"/>
+    <item initValue="0" variableType="number" variableName="tank2" type="variable"/>
+    <item initValue="0" variableType="number" variableName="tank3" type="variable"/>
+    <item initValue="0" variableType="number" variableName="tank4" type="variable"/>
+    <item initValue="0" variableType="number" variableName="coin" type="variable"/>
+  </item>
+  <item type="instance" UID="431"/>
+  <item type="instance" UID="529"/>
+  <item type="instance" UID="527"/>
+  <item type="instance" UID="407"/>
+  <item type="instance" UID="409"/>
+  <item type="instance" UID="415"/>
+  <item type="instance" UID="405">
+    <item initValue="0" variableType="number" variableName="mouseDown" type="variable"/>
+    <item initValue="0" variableType="number" variableName="isComplete" type="variable"/>
+    <item type="behavior" behaviorType="TurretBehaivor" name="炮塔行为">
+      <item valueDataType="number" value="180" name="range"/>
+      <item valueDataType="number" value="0.5" name="rateOfFire"/>
+      <item valueDataType="number" value="6" name="rotateSpeed"/>
+      <item valueDataType="number" value="1" name="targetMode"/>
+      <item valueDataType="any" value="0" name="compareInstanceVariables"/>
+      <item valueDataType="number" value="1" name="sortMode"/>
+    </item>
+  </item>
+  <item type="instance" UID="403">
+    <item initValue="0" variableType="number" variableName="mouseDown" type="variable"/>
+    <item initValue="0" variableType="number" variableName="isComplete" type="variable"/>
+    <item type="behavior" behaviorType="TurretBehaivor" name="炮塔行为">
+      <item valueDataType="number" value="100" name="range"/>
+      <item valueDataType="number" value="1" name="rateOfFire"/>
+      <item valueDataType="number" value="3" name="rotateSpeed"/>
+      <item valueDataType="number" value="0" name="targetMode"/>
+      <item valueDataType="any" value="0" name="compareInstanceVariables"/>
+      <item valueDataType="number" value="1" name="sortMode"/>
+    </item>
+  </item>
+  <item type="instance" UID="342">
+    <item type="behavior" behaviorType="BulletBehaivor" name="子弹行为">
+      <item valueDataType="number" value="400" name="speed"/>
+      <item valueDataType="number" value="0" name="acceleration"/>
+      <item valueDataType="number" value="0" name="gravity"/>
+      <item valueDataType="number" value="0" name="angle"/>
+      <item valueDataType="number" value="0" name="bounceOffSolids"/>
+      <item valueDataType="number" value="1" name="solidChangedAngle"/>
+    </item>
+  </item>
+  <item type="instance" UID="505"/>
+  <item type="instance" UID="506"/>
+  <item type="instance" UID="502"/>
+  <item type="instance" UID="501"/>
+  <item type="instance" UID="503"/>
+  <item type="instance" UID="500"/>
+  <item type="instance" UID="504"/>
+  <item type="instance" UID="482"/>
+  <item type="instance" UID="492"/>
+  <item type="instance" UID="487"/>
+  <item type="instance" UID="483"/>
+  <item type="instance" UID="484"/>
+  <item type="instance" UID="481"/>
+  <item type="instance" UID="480"/>
+  <item type="instance" UID="478"/>
+  <item type="instance" UID="479"/>
+  <item type="instance" UID="468"/>
+  <item type="instance" UID="467"/>
+  <item type="instance" UID="461"/>
+  <item type="instance" UID="465"/>
+  <item type="instance" UID="463"/>
+  <item type="instance" UID="462"/>
+  <item type="instance" UID="460"/>
+  <item type="instance" UID="458"/>
+  <item type="instance" UID="457"/>
+  <item type="instance" UID="456"/>
+  <item type="instance" UID="453"/>
+  <item type="instance" UID="450"/>
+  <item type="instance" UID="452"/>
+  <item type="instance" UID="451"/>
+  <item type="instance" UID="449"/>
+  <item type="instance" UID="448"/>
+  <item type="instance" UID="447"/>
+  <item type="instance" UID="446"/>
+  <item type="instance" UID="421"/>
+  <item type="instance" UID="424"/>
+  <item type="instance" UID="428"/>
+  <item type="instance" UID="420"/>
+  <item type="instance" UID="429"/>
+  <item type="instance" UID="418"/>
+  <item type="instance" UID="413"/>
+  <item type="instance" UID="417"/>
+  <item type="instance" UID="514"/>
+  <item type="instance" UID="439">
+    <item initValue="100" variableType="number" variableName="coin" type="variable"/>
+  </item>
+  <item type="instance" UID="336">
+    <item initValue="5" variableType="number" variableName="hp" type="variable"/>
+    <item initValue="0" variableType="number" variableName="over" type="variable"/>
+  </item>
+  <item type="instance" UID="310"/>
+  <item type="instance" UID="330">
+    <item initValue="50" variableType="number" variableName="hp" type="variable"/>
+    <item type="behavior" behaviorType="PathfindingBehaivor" name="寻路行为">
+      <item valueDataType="string" value="map" name="tiledmapName"/>
+      <item valueDataType="string" value="Solid" name="gridLayerName"/>
+      <item valueDataType="number" value="54" name="moveSpeed"/>
+    </item>
+    <item type="behavior" behaviorType="DestoryOutsideLayoutBehaivor" name="出边界销毁行为">
+      <item valueDataType="number" value="1" name="type"/>
+    </item>
+  </item>
+  <item type="instance" UID="332">
+    <item initValue="60" variableType="number" variableName="hp" type="variable"/>
+    <item type="behavior" behaviorType="PathfindingBehaivor" name="寻路行为">
+      <item valueDataType="string" value="map" name="tiledmapName"/>
+      <item valueDataType="string" value="Solid" name="gridLayerName"/>
+      <item valueDataType="number" value="60" name="moveSpeed"/>
+    </item>
+    <item type="behavior" behaviorType="DestoryOutsideLayoutBehaivor" name="出边界销毁行为">
+      <item valueDataType="number" value="1" name="type"/>
+    </item>
+  </item>
+  <item type="instance" UID="510">
+    <item initValue="120" variableType="number" variableName="hp" type="variable"/>
+    <item type="behavior" behaviorType="PathfindingBehaivor" name="寻路行为">
+      <item valueDataType="string" value="map" name="tiledmapName"/>
+      <item valueDataType="string" value="Solid" name="gridLayerName"/>
+      <item valueDataType="number" value="30" name="moveSpeed"/>
+    </item>
+    <item type="behavior" behaviorType="DestoryOutsideLayoutBehaivor" name="出界销毁">
+      <item valueDataType="number" value="1" name="type"/>
+    </item>
+  </item>
+  <item type="instance" UID="512">
+    <item initValue="40" variableType="number" variableName="hp" type="variable"/>
+    <item type="behavior" behaviorType="PathfindingBehaivor" name="寻路行为">
+      <item valueDataType="string" value="map" name="tiledmapName"/>
+      <item valueDataType="string" value="Solid" name="gridLayerName"/>
+      <item valueDataType="number" value="150" name="moveSpeed"/>
+    </item>
+    <item type="behavior" behaviorType="DestoryOutsideLayoutBehaivor" name="出界销毁">
+      <item valueDataType="number" value="1" name="type"/>
+    </item>
+  </item>
+  <item type="instance" UID="328">
+    <item initValue="0" variableType="number" variableName="count2" type="variable"/>
+    <item initValue="0" variableType="number" variableName="count4" type="variable"/>
+  </item>
+  <item type="instance" UID="326">
+    <item initValue="0" variableType="number" variableName="count1" type="variable"/>
+    <item initValue="0" variableType="number" variableName="count3" type="variable"/>
+  </item>
+  <item type="instance" UID="324">
+    <item initValue="0" variableType="number" variableName="exit" type="variable"/>
+  </item>
+  <item type="instance" UID="348"/>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="EveryXSecondsEvent" callName="everyXSecondEvent" isTrigger="false" target="System">
+      <item valueDataType="number" value="4.5" name="interval"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareInstanceVariableEvent" callName="compareInstanceVariable" isTrigger="false" target="life">
+      <item valueDataType="string" value="hp" name="instanceVariable" variable="true"/>
+      <item valueDataType="string" value="%22greaterThan%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareInstanceVariableEvent" callName="compareInstanceVariable" isTrigger="false" target="EnemyStart1">
+      <item valueDataType="string" value="count1" name="instanceVariable" variable="true"/>
+      <item valueDataType="string" value="%22lessThan%22" name="operationType"/>
+      <item valueDataType="any" value="11" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="spawn" target="EnemyStart1">
+      <item valueDataType="string" value="Enemy1" name="10" isFamily="false"/>
+      <item valueDataType="number" value="1" name="11"/>
+      <item valueDataType="number" value="0" name="12"/>
+      <item valueDataType="number" value="0" name="13"/>
+      <item valueDataType="number" value="1" name="14"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="addTo" target="EnemyStart1">
+      <item valueDataType="string" value="count1" name="10" variable="true"/>
+      <item valueDataType="number" value="1" name="11"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="EveryXSecondsEvent" callName="everyXSecondEvent" isTrigger="false" target="System">
+      <item valueDataType="number" value="3.5" name="interval"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareInstanceVariableEvent" callName="compareInstanceVariable" isTrigger="false" target="life">
+      <item valueDataType="string" value="hp" name="instanceVariable" variable="true"/>
+      <item valueDataType="string" value="%22greaterThan%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareInstanceVariableEvent" callName="compareInstanceVariable" isTrigger="false" target="EnemyStart1">
+      <item valueDataType="string" value="count1" name="instanceVariable" variable="true"/>
+      <item valueDataType="string" value="%22greaterOrEqual%22" name="operationType"/>
+      <item valueDataType="any" value="8" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareInstanceVariableEvent" callName="compareInstanceVariable" isTrigger="false" target="EnemyStart2">
+      <item valueDataType="string" value="count2" name="instanceVariable" variable="true"/>
+      <item valueDataType="string" value="%22lessThan%22" name="operationType"/>
+      <item valueDataType="any" value="25" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="spawn" target="EnemyStart2">
+      <item valueDataType="string" value="Enemy2" name="10" isFamily="false"/>
+      <item valueDataType="number" value="1" name="11"/>
+      <item valueDataType="number" value="0" name="12"/>
+      <item valueDataType="number" value="0" name="13"/>
+      <item valueDataType="number" value="1" name="14"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="addTo" target="EnemyStart2">
+      <item valueDataType="string" value="count2" name="10" variable="true"/>
+      <item valueDataType="number" value="1" name="11"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="EveryXSecondsEvent" callName="everyXSecondEvent" isTrigger="false" target="System">
+      <item valueDataType="number" value="2.6" name="interval"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareInstanceVariableEvent" callName="compareInstanceVariable" isTrigger="false" target="life">
+      <item valueDataType="string" value="hp" name="instanceVariable" variable="true"/>
+      <item valueDataType="string" value="%22greaterThan%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareInstanceVariableEvent" callName="compareInstanceVariable" isTrigger="false" target="EnemyStart1">
+      <item valueDataType="string" value="count1" name="instanceVariable" variable="true"/>
+      <item valueDataType="string" value="%22greaterOrEqual%22" name="operationType"/>
+      <item valueDataType="any" value="11" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareInstanceVariableEvent" callName="compareInstanceVariable" isTrigger="false" target="EnemyStart1">
+      <item valueDataType="string" value="count3" name="instanceVariable" variable="true"/>
+      <item valueDataType="string" value="%22lessThan%22" name="operationType"/>
+      <item valueDataType="any" value="30" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="spawn" target="EnemyStart1">
+      <item valueDataType="string" value="Enemy3" name="10" isFamily="false"/>
+      <item valueDataType="number" value="1" name="11"/>
+      <item valueDataType="number" value="0" name="12"/>
+      <item valueDataType="number" value="0" name="13"/>
+      <item valueDataType="number" value="1" name="14"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="addTo" target="EnemyStart1">
+      <item valueDataType="string" value="count3" name="10" variable="true"/>
+      <item valueDataType="number" value="1" name="11"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="EveryXSecondsEvent" callName="everyXSecondEvent" isTrigger="false" target="System">
+      <item valueDataType="number" value="2" name="interval"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareInstanceVariableEvent" callName="compareInstanceVariable" isTrigger="false" target="life">
+      <item valueDataType="string" value="hp" name="instanceVariable" variable="true"/>
+      <item valueDataType="string" value="%22greaterThan%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareInstanceVariableEvent" callName="compareInstanceVariable" isTrigger="false" target="EnemyStart1">
+      <item valueDataType="string" value="count3" name="instanceVariable" variable="true"/>
+      <item valueDataType="string" value="%22greaterOrEqual%22" name="operationType"/>
+      <item valueDataType="any" value="14" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareInstanceVariableEvent" callName="compareInstanceVariable" isTrigger="false" target="EnemyStart2">
+      <item valueDataType="string" value="count4" name="instanceVariable" variable="true"/>
+      <item valueDataType="string" value="%22lessThan%22" name="operationType"/>
+      <item valueDataType="any" value="25" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="spawn" target="EnemyStart2">
+      <item valueDataType="string" value="Enemy4" name="10" isFamily="false"/>
+      <item valueDataType="number" value="1" name="11"/>
+      <item valueDataType="number" value="0" name="12"/>
+      <item valueDataType="number" value="0" name="13"/>
+      <item valueDataType="number" value="1" name="14"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="addTo" target="EnemyStart2">
+      <item valueDataType="string" value="count4" name="10" variable="true"/>
+      <item valueDataType="number" value="1" name="11"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnPathfindingGridCompleteEvent" callName="onPathGridComplete" isTrigger="true" target="Enemy1" behaviorName="寻路行为"/>
+    <item type="action" persistent="false" callTarget="instance" callName="findPath" target="Enemy1" behaviorName="寻路行为">
+      <item valueDataType="number" value="EnemyTarget.x" name="4"/>
+      <item valueDataType="number" value="EnemyTarget.y" name="5"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnPathfindingGridCompleteEvent" callName="onPathGridComplete" isTrigger="true" target="Enemy2" behaviorName="寻路行为"/>
+    <item type="action" persistent="false" callTarget="instance" callName="findPath" target="Enemy2" behaviorName="寻路行为">
+      <item valueDataType="number" value="EnemyTarget.x" name="4"/>
+      <item valueDataType="number" value="EnemyTarget.y" name="5"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnPathfindingGridCompleteEvent" callName="onPathGridComplete" isTrigger="true" target="Enemy3" behaviorName="寻路行为"/>
+    <item type="action" persistent="false" callTarget="instance" callName="findPath" target="Enemy3" behaviorName="寻路行为">
+      <item valueDataType="number" value="EnemyTarget.x" name="4"/>
+      <item valueDataType="number" value="EnemyTarget.y" name="5"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnPathfindingGridCompleteEvent" callName="onPathGridComplete" isTrigger="true" target="Enemy4" behaviorName="寻路行为"/>
+    <item type="action" persistent="false" callTarget="instance" callName="findPath" target="Enemy4" behaviorName="寻路行为">
+      <item valueDataType="number" value="EnemyTarget.x" name="4"/>
+      <item valueDataType="number" value="EnemyTarget.y" name="5"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnCollisionWithOtherObjectEvent" callName="onCollisionWithOtherObject" isTrigger="true" target="EnemyTarget">
+      <item valueDataType="string" value="Enemy1" name="object" isFamily="false"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="Enemy1"/>
+    <item type="action" persistent="false" callTarget="instance" callName="subtractFrom" target="life">
+      <item valueDataType="string" value="hp" name="10" variable="true"/>
+      <item valueDataType="number" value="1" name="11"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="addTo" target="EnemyTarget">
+      <item valueDataType="string" value="exit" name="10" variable="true"/>
+      <item valueDataType="number" value="1" name="11"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnCollisionWithOtherObjectEvent" callName="onCollisionWithOtherObject" isTrigger="true" target="EnemyTarget">
+      <item valueDataType="string" value="Enemy2" name="object" isFamily="false"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="Enemy2"/>
+    <item type="action" persistent="false" callTarget="instance" callName="subtractFrom" target="life">
+      <item valueDataType="string" value="hp" name="10" variable="true"/>
+      <item valueDataType="number" value="1" name="11"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="addTo" target="EnemyTarget">
+      <item valueDataType="string" value="exit" name="10" variable="true"/>
+      <item valueDataType="number" value="1" name="11"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnCollisionWithOtherObjectEvent" callName="onCollisionWithOtherObject" isTrigger="true" target="EnemyTarget">
+      <item valueDataType="string" value="Enemy3" name="object" isFamily="false"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="Enemy3"/>
+    <item type="action" persistent="false" callTarget="instance" callName="subtractFrom" target="life">
+      <item valueDataType="string" value="hp" name="10" variable="true"/>
+      <item valueDataType="number" value="1" name="11"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="addTo" target="EnemyTarget">
+      <item valueDataType="string" value="exit" name="10" variable="true"/>
+      <item valueDataType="number" value="1" name="11"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnCollisionWithOtherObjectEvent" callName="onCollisionWithOtherObject" isTrigger="true" target="EnemyTarget">
+      <item valueDataType="string" value="Enemy4" name="object" isFamily="false"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="Enemy4"/>
+    <item type="action" persistent="false" callTarget="instance" callName="subtractFrom" target="life">
+      <item valueDataType="string" value="hp" name="10" variable="true"/>
+      <item valueDataType="number" value="1" name="11"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="addTo" target="EnemyTarget">
+      <item valueDataType="string" value="exit" name="10" variable="true"/>
+      <item valueDataType="number" value="1" name="11"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="EveryTickEvent" callName="everyTick" isTrigger="false" target="System"/>
+    <item type="action" persistent="false" callTarget="instance" callName="addTarget" target="turret1" behaviorName="炮塔行为">
+      <item valueDataType="string" value="Enemy1" name="3" isFamily="false"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="addTarget" target="turret1" behaviorName="炮塔行为">
+      <item valueDataType="string" value="Enemy2" name="3" isFamily="false"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="addTarget" target="turret1" behaviorName="炮塔行为">
+      <item valueDataType="string" value="Enemy3" name="3" isFamily="false"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="addTarget" target="turret1" behaviorName="炮塔行为">
+      <item valueDataType="string" value="Enemy4" name="3" isFamily="false"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="EveryTickEvent" callName="everyTick" isTrigger="false" target="System"/>
+    <item type="action" persistent="false" callTarget="instance" callName="addTarget" target="turret2" behaviorName="炮塔行为">
+      <item valueDataType="string" value="Enemy1" name="3" isFamily="false"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="addTarget" target="turret2" behaviorName="炮塔行为">
+      <item valueDataType="string" value="Enemy2" name="3" isFamily="false"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="addTarget" target="turret2" behaviorName="炮塔行为">
+      <item valueDataType="string" value="Enemy4" name="3" isFamily="false"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="addTarget" target="turret2" behaviorName="炮塔行为">
+      <item valueDataType="string" value="Enemy3" name="3" isFamily="false"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="B_Turret_OnShootEvent" callName="onShoot" isTrigger="true" target="turret1" behaviorName="炮塔行为"/>
+    <item type="action" persistent="false" callTarget="instance" callName="spawn" target="turret1">
+      <item valueDataType="string" value="turretBullet" name="10" isFamily="false"/>
+      <item valueDataType="number" value="4" name="11"/>
+      <item valueDataType="number" value="0" name="12"/>
+      <item valueDataType="number" value="0" name="13"/>
+      <item valueDataType="number" value="1" name="14"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="B_Turret_OnShootEvent" callName="onShoot" isTrigger="true" target="turret2" behaviorName="炮塔行为"/>
+    <item type="action" persistent="false" callTarget="instance" callName="spawn" target="turret2">
+      <item valueDataType="string" value="turretBullet" name="10" isFamily="false"/>
+      <item valueDataType="number" value="4" name="11"/>
+      <item valueDataType="number" value="0" name="12"/>
+      <item valueDataType="number" value="0" name="13"/>
+      <item valueDataType="number" value="1" name="14"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="false" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnCollisionWithOtherObjectEvent" callName="onCollisionWithOtherObject" isTrigger="true" target="turretBullet">
+      <item valueDataType="string" value="Enemy1" name="object" isFamily="false"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="turretBullet"/>
+    <item type="action" persistent="false" callTarget="instance" callName="subtractFrom" target="Enemy1">
+      <item valueDataType="string" value="hp" name="10" variable="true"/>
+      <item valueDataType="number" value="10" name="11"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnCollisionWithOtherObjectEvent" callName="onCollisionWithOtherObject" isTrigger="true" target="turretBullet">
+      <item valueDataType="string" value="Enemy2" name="object" isFamily="false"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="turretBullet"/>
+    <item type="action" persistent="false" callTarget="instance" callName="subtractFrom" target="Enemy2">
+      <item valueDataType="string" value="hp" name="10" variable="true"/>
+      <item valueDataType="number" value="10" name="11"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnCollisionWithOtherObjectEvent" callName="onCollisionWithOtherObject" isTrigger="true" target="Enemy3">
+      <item valueDataType="string" value="turretBullet" name="object" isFamily="false"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="subtractFrom" target="Enemy3">
+      <item valueDataType="string" value="hp" name="10" variable="true"/>
+      <item valueDataType="number" value="10" name="11"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="turretBullet"/>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnCollisionWithOtherObjectEvent" callName="onCollisionWithOtherObject" isTrigger="true" target="Enemy4">
+      <item valueDataType="string" value="turretBullet" name="object" isFamily="false"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="subtractFrom" target="Enemy4">
+      <item valueDataType="string" value="hp" name="10" variable="true"/>
+      <item valueDataType="number" value="10" name="11"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="turretBullet"/>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareInstanceVariableEvent" callName="compareInstanceVariable" isTrigger="false" target="Enemy1">
+      <item valueDataType="string" value="hp" name="instanceVariable" variable="true"/>
+      <item valueDataType="string" value="%22lessOrEqual%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="Enemy1"/>
+    <item type="action" persistent="false" callTarget="instance" callName="addTo" target="Money">
+      <item valueDataType="string" value="coin" name="10" variable="true"/>
+      <item valueDataType="number" value="10" name="11"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="addTo" target="gameover">
+      <item valueDataType="string" value="coin" name="10" variable="true"/>
+      <item valueDataType="number" value="10" name="11"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="addTo" target="gameover">
+      <item valueDataType="string" value="tank1" name="10" variable="true"/>
+      <item valueDataType="number" value="1" name="11"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareInstanceVariableEvent" callName="compareInstanceVariable" isTrigger="false" target="Enemy2">
+      <item valueDataType="string" value="hp" name="instanceVariable" variable="true"/>
+      <item valueDataType="string" value="%22lessOrEqual%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="Enemy2"/>
+    <item type="action" persistent="false" callTarget="instance" callName="addTo" target="Money">
+      <item valueDataType="string" value="coin" name="10" variable="true"/>
+      <item valueDataType="number" value="10" name="11"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="addTo" target="gameover">
+      <item valueDataType="string" value="coin" name="10" variable="true"/>
+      <item valueDataType="number" value="10" name="11"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="addTo" target="gameover">
+      <item valueDataType="string" value="tank2" name="10" variable="true"/>
+      <item valueDataType="number" value="1" name="11"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareInstanceVariableEvent" callName="compareInstanceVariable" isTrigger="false" target="Enemy3">
+      <item valueDataType="string" value="hp" name="instanceVariable" variable="true"/>
+      <item valueDataType="string" value="%22lessOrEqual%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="Enemy3"/>
+    <item type="action" persistent="false" callTarget="instance" callName="addTo" target="Money">
+      <item valueDataType="string" value="coin" name="10" variable="true"/>
+      <item valueDataType="number" value="6" name="11"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="addTo" target="gameover">
+      <item valueDataType="string" value="coin" name="10" variable="true"/>
+      <item valueDataType="number" value="6" name="11"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="addTo" target="gameover">
+      <item valueDataType="string" value="tank3" name="10" variable="true"/>
+      <item valueDataType="number" value="1" name="11"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareInstanceVariableEvent" callName="compareInstanceVariable" isTrigger="false" target="Enemy4">
+      <item valueDataType="string" value="hp" name="instanceVariable" variable="true"/>
+      <item valueDataType="string" value="%22lessOrEqual%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="Enemy4"/>
+    <item type="action" persistent="false" callTarget="instance" callName="addTo" target="Money">
+      <item valueDataType="string" value="coin" name="10" variable="true"/>
+      <item valueDataType="number" value="3" name="11"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="addTo" target="gameover">
+      <item valueDataType="string" value="tank4" name="10" variable="true"/>
+      <item valueDataType="number" value="1" name="11"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="EveryTickEvent" callName="everyTick" isTrigger="false" target="System"/>
+    <item type="action" persistent="false" callTarget="instance" callName="setText" target="life">
+      <item valueDataType="string" value="life.hp" name="1"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="base"/>
+    <item type="action" persistent="false" callTarget="instance" callName="setPositionToAnotherObject" target="menubg">
+      <item valueDataType="string" value="base" name="16" isFamily="false"/>
+      <item valueDataType="number" value="0" name="17"/>
+      <item valueDataType="number" value="-70" name="18"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="menubg">
+      <item valueDataType="number" value="1" name="10"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="IsVisibleEvent" callName="isVisible" isTrigger="false" target="menubg">
+      <item valueDataType="number" value="1" name="isVisible"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPositionToAnotherObject" target="T1_button">
+      <item valueDataType="string" value="menubg" name="16" isFamily="false"/>
+      <item valueDataType="number" value="-40" name="17"/>
+      <item valueDataType="number" value="30" name="18"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPositionToAnotherObject" target="T2_button">
+      <item valueDataType="string" value="menubg" name="16" isFamily="false"/>
+      <item valueDataType="number" value="40" name="17"/>
+      <item valueDataType="number" value="30" name="18"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="T1_button">
+      <item valueDataType="number" value="1" name="10"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="T2_button">
+      <item valueDataType="number" value="1" name="10"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPositionToAnotherObject" target="t1cost">
+      <item valueDataType="string" value="menubg" name="16" isFamily="false"/>
+      <item valueDataType="number" value="-36" name="17"/>
+      <item valueDataType="number" value="40" name="18"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPositionToAnotherObject" target="t2cost">
+      <item valueDataType="string" value="menubg" name="16" isFamily="false"/>
+      <item valueDataType="number" value="36" name="17"/>
+      <item valueDataType="number" value="40" name="18"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="t1cost">
+      <item valueDataType="number" value="1" name="10"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="t2cost">
+      <item valueDataType="number" value="1" name="10"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="T1_button"/>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="menubg">
+      <item valueDataType="number" value="-100" name="16"/>
+      <item valueDataType="number" value="-100" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="T1_button">
+      <item valueDataType="number" value="-100" name="16"/>
+      <item valueDataType="number" value="-100" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="T2_button">
+      <item valueDataType="number" value="-100" name="16"/>
+      <item valueDataType="number" value="-100" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="menubg">
+      <item valueDataType="number" value="0" name="10"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="T2_button">
+      <item valueDataType="number" value="0" name="10"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="T1_button">
+      <item valueDataType="number" value="0" name="10"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="turret1" name="23" isFamily="false"/>
+      <item valueDataType="number" value="4" name="22"/>
+      <item valueDataType="number" value="base.x" name="21"/>
+      <item valueDataType="number" value="base.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="subtractFrom" target="Money">
+      <item valueDataType="string" value="coin" name="10" variable="true"/>
+      <item valueDataType="number" value="50" name="11"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="t1cost">
+      <item valueDataType="number" value="0" name="10"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="t2cost">
+      <item valueDataType="number" value="0" name="10"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="T2_button"/>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="menubg">
+      <item valueDataType="number" value="-100" name="16"/>
+      <item valueDataType="number" value="-100" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="T1_button">
+      <item valueDataType="number" value="-100" name="16"/>
+      <item valueDataType="number" value="-100" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="T2_button">
+      <item valueDataType="number" value="-100" name="16"/>
+      <item valueDataType="number" value="-100" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="menubg">
+      <item valueDataType="number" value="0" name="10"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="T1_button">
+      <item valueDataType="number" value="0" name="10"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="T2_button">
+      <item valueDataType="number" value="0" name="10"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="turret2" name="23" isFamily="false"/>
+      <item valueDataType="number" value="4" name="22"/>
+      <item valueDataType="number" value="base.x" name="21"/>
+      <item valueDataType="number" value="base.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="subtractFrom" target="Money">
+      <item valueDataType="string" value="coin" name="10" variable="true"/>
+      <item valueDataType="number" value="95" name="11"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="t1cost">
+      <item valueDataType="number" value="0" name="10"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="t2cost">
+      <item valueDataType="number" value="0" name="10"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnCreatedEvent" callName="onCreated" isTrigger="true" target="screenbutton"/>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="screenbutton">
+      <item valueDataType="number" value="0" name="16"/>
+      <item valueDataType="number" value="0" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="screenbutton">
+      <item valueDataType="number" value="1" name="10"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="screenbutton"/>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="menubg">
+      <item valueDataType="number" value="-100" name="16"/>
+      <item valueDataType="number" value="-100" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="T2_button">
+      <item valueDataType="number" value="-100" name="16"/>
+      <item valueDataType="number" value="-100" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="T1_button">
+      <item valueDataType="number" value="-100" name="16"/>
+      <item valueDataType="number" value="-100" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="menubg">
+      <item valueDataType="number" value="0" name="10"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="T1_button">
+      <item valueDataType="number" value="0" name="10"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="T2_button">
+      <item valueDataType="number" value="0" name="10"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="t1cost">
+      <item valueDataType="number" value="0" name="10"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="t2cost">
+      <item valueDataType="number" value="0" name="10"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="B_Bullet_compareDistanceTravelledEvent" callName="compareTravelled" isTrigger="false" target="turretBullet" behaviorName="子弹行为">
+      <item valueDataType="string" value="%22greaterOrEqual%22" name="operationType"/>
+      <item valueDataType="number" value="300" name="distance"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="turretBullet"/>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareInstanceVariableEvent" callName="compareInstanceVariable" isTrigger="false" target="life">
+      <item valueDataType="string" value="hp" name="instanceVariable" variable="true"/>
+      <item valueDataType="string" value="%22lessOrEqual%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareInstanceVariableEvent" callName="compareInstanceVariable" isTrigger="false" target="life">
+      <item valueDataType="string" value="over" name="instanceVariable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="Mask">
+      <item valueDataType="number" value="0" name="16"/>
+      <item valueDataType="number" value="0" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="gameover">
+      <item valueDataType="number" value="480" name="16"/>
+      <item valueDataType="number" value="280" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="playagain">
+      <item valueDataType="number" value="480" name="16"/>
+      <item valueDataType="number" value="400" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="Mask">
+      <item valueDataType="number" value="1" name="10"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPositionToAnotherObject" target="coinsummary">
+      <item valueDataType="string" value="gameover" name="16" isFamily="false"/>
+      <item valueDataType="number" value="0" name="17"/>
+      <item valueDataType="number" value="50" name="18"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setText" target="coinsummary">
+      <item valueDataType="string" value="gameover.coin" name="1"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setText" target="t1">
+      <item valueDataType="string" value="%22x%22%2Bgameover.tank1" name="1"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setText" target="t2">
+      <item valueDataType="string" value="%22x%22%2Bgameover.tank2" name="1"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setText" target="t3">
+      <item valueDataType="string" value="%22x%22%2Bgameover.tank3" name="1"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setText" target="t4">
+      <item valueDataType="string" value="%22x%22%2Bgameover.tank4" name="1"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPositionToAnotherObject" target="t1">
+      <item valueDataType="string" value="gameover" name="16" isFamily="false"/>
+      <item valueDataType="number" value="-180" name="17"/>
+      <item valueDataType="number" value="-5" name="18"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPositionToAnotherObject" target="t4">
+      <item valueDataType="string" value="gameover" name="16" isFamily="false"/>
+      <item valueDataType="number" value="160" name="17"/>
+      <item valueDataType="number" value="-5" name="18"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPositionToAnotherObject" target="t2">
+      <item valueDataType="string" value="gameover" name="16" isFamily="false"/>
+      <item valueDataType="number" value="-65" name="17"/>
+      <item valueDataType="number" value="-5" name="18"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPositionToAnotherObject" target="t3">
+      <item valueDataType="string" value="gameover" name="16" isFamily="false"/>
+      <item valueDataType="number" value="50" name="17"/>
+      <item valueDataType="number" value="-5" name="18"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setValue" target="life">
+      <item valueDataType="string" value="over" name="10" variable="true"/>
+      <item valueDataType="any" value="1" name="11"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="EnemyTarget"/>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="overtitle">
+      <item valueDataType="number" value="480" name="16"/>
+      <item valueDataType="number" value="150" name="17"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareTwoValuesEvent" callName="compareTwoValue" isTrigger="false" target="System">
+      <item valueDataType="any" value="gameover.tank1%2Bgameover.tank2%2Bgameover.tank3%2Bgameover.tank4%2BEnemyTarget.exit" name="value1"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="91" name="value2"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareInstanceVariableEvent" callName="compareInstanceVariable" isTrigger="false" target="life">
+      <item valueDataType="string" value="over" name="instanceVariable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareInstanceVariableEvent" callName="compareInstanceVariable" isTrigger="false" target="life">
+      <item valueDataType="string" value="hp" name="instanceVariable" variable="true"/>
+      <item valueDataType="string" value="%22greaterThan%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="gameover">
+      <item valueDataType="number" value="480" name="16"/>
+      <item valueDataType="number" value="280" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="Mask">
+      <item valueDataType="number" value="0" name="16"/>
+      <item valueDataType="number" value="0" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="playagain">
+      <item valueDataType="number" value="480" name="16"/>
+      <item valueDataType="number" value="400" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="Mask">
+      <item valueDataType="number" value="1" name="10"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPositionToAnotherObject" target="coinsummary">
+      <item valueDataType="string" value="gameover" name="16" isFamily="false"/>
+      <item valueDataType="number" value="0" name="17"/>
+      <item valueDataType="number" value="50" name="18"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setText" target="coinsummary">
+      <item valueDataType="string" value="gameover.coin" name="1"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setText" target="t1">
+      <item valueDataType="string" value="%22x%22%2Bgameover.tank1" name="1"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setText" target="t2">
+      <item valueDataType="string" value="%22x%22%2Bgameover.tank2" name="1"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setText" target="t3">
+      <item valueDataType="string" value="%22x%22%2Bgameover.tank3" name="1"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setText" target="t4">
+      <item valueDataType="string" value="%22x%22%2Bgameover.tank4" name="1"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPositionToAnotherObject" target="t1">
+      <item valueDataType="string" value="gameover" name="16" isFamily="false"/>
+      <item valueDataType="number" value="-180" name="17"/>
+      <item valueDataType="number" value="-5" name="18"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPositionToAnotherObject" target="t2">
+      <item valueDataType="string" value="gameover" name="16" isFamily="false"/>
+      <item valueDataType="number" value="-65" name="17"/>
+      <item valueDataType="number" value="-5" name="18"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPositionToAnotherObject" target="t3">
+      <item valueDataType="string" value="gameover" name="16" isFamily="false"/>
+      <item valueDataType="number" value="50" name="17"/>
+      <item valueDataType="number" value="-5" name="18"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPositionToAnotherObject" target="t4">
+      <item valueDataType="string" value="gameover" name="16" isFamily="false"/>
+      <item valueDataType="number" value="160" name="17"/>
+      <item valueDataType="number" value="-5" name="18"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setValue" target="life">
+      <item valueDataType="string" value="over" name="10" variable="true"/>
+      <item valueDataType="any" value="1" name="11"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="victory">
+      <item valueDataType="number" value="480" name="16"/>
+      <item valueDataType="number" value="150" name="17"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="playagain"/>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoScene" target="System">
+      <item valueDataType="string" value="%22MainScene%22" name="18"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="EveryTickEvent" callName="everyTick" isTrigger="false" target="System"/>
+    <item type="action" persistent="false" callTarget="instance" callName="setText" target="Money">
+      <item valueDataType="string" value="Money.coin" name="1"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="EveryTickEvent" callName="everyTick" isTrigger="false" target="System"/>
+    <item type="condition" callTarget="instance" paramsClass="CompareTwoValuesEvent" callName="compareTwoValue" isTrigger="false" target="System">
+      <item valueDataType="any" value="Money.coin-50" name="value1"/>
+      <item valueDataType="string" value="%22lessThan%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value2"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setEnabled" target="T1_button">
+      <item valueDataType="number" value="0" name="14"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareTwoValuesEvent" callName="compareTwoValue" isTrigger="false" target="System">
+      <item valueDataType="any" value="Money.coin-95" name="value1"/>
+      <item valueDataType="string" value="%22lessThan%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value2"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="EveryTickEvent" callName="everyTick" isTrigger="false" target="System"/>
+    <item type="action" persistent="false" callTarget="instance" callName="setEnabled" target="T2_button">
+      <item valueDataType="number" value="0" name="14"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="EveryTickEvent" callName="everyTick" isTrigger="false" target="System"/>
+    <item type="condition" callTarget="instance" paramsClass="CompareTwoValuesEvent" callName="compareTwoValue" isTrigger="false" target="System">
+      <item valueDataType="any" value="Money.coin-50" name="value1"/>
+      <item valueDataType="string" value="%22greaterOrEqual%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value2"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setEnabled" target="T1_button">
+      <item valueDataType="number" value="1" name="14"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="EveryTickEvent" callName="everyTick" isTrigger="false" target="System"/>
+    <item type="condition" callTarget="instance" paramsClass="CompareTwoValuesEvent" callName="compareTwoValue" isTrigger="false" target="System">
+      <item valueDataType="any" value="Money.coin-95" name="value1"/>
+      <item valueDataType="string" value="%22greaterOrEqual%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value2"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setEnabled" target="T2_button">
+      <item valueDataType="number" value="1" name="14"/>
+    </item>
+  </item>
+</eventSheets>

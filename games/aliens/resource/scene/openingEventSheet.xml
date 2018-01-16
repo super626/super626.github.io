@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eventSheets layout="opening" previous="" next="" version="2.2">
+  <item type="instance" UID="2753"/>
+  <item type="instance" UID="2751">
+    <item type="behavior" behaviorType="SinBehavior" name="曲线">
+      <item valueDataType="number" value="1" name="active"/>
+      <item valueDataType="number" value="8" name="movement"/>
+      <item valueDataType="number" value="0" name="wave"/>
+      <item valueDataType="number" value="1" name="period"/>
+      <item valueDataType="number" value="0" name="periodRandom"/>
+      <item valueDataType="number" value="0" name="periodOffset"/>
+      <item valueDataType="number" value="0" name="periodOffsetRandom"/>
+      <item valueDataType="number" value="20" name="magnitude"/>
+      <item valueDataType="number" value="0" name="magnitudeRandom"/>
+    </item>
+    <item type="behavior" behaviorType="FadeBehavior" name="淡入淡出">
+      <item valueDataType="number" value="0" name="activeAtStartType"/>
+      <item valueDataType="number" value="1" name="fadeInTime"/>
+      <item valueDataType="number" value="0" name="waitTime"/>
+      <item valueDataType="number" value="0" name="fadeOutTime"/>
+      <item valueDataType="number" value="1" name="loopTimes"/>
+      <item valueDataType="number" value="0" name="destoryType"/>
+    </item>
+  </item>
+  <item type="instance" UID="2743">
+    <item type="behavior" behaviorType="SinBehavior" name="曲线">
+      <item valueDataType="number" value="1" name="active"/>
+      <item valueDataType="number" value="5" name="movement"/>
+      <item valueDataType="number" value="0" name="wave"/>
+      <item valueDataType="number" value="2" name="period"/>
+      <item valueDataType="number" value="0" name="periodRandom"/>
+      <item valueDataType="number" value="0.5" name="periodOffset"/>
+      <item valueDataType="number" value="0" name="periodOffsetRandom"/>
+      <item valueDataType="number" value="20" name="magnitude"/>
+      <item valueDataType="number" value="0" name="magnitudeRandom"/>
+    </item>
+  </item>
+  <item type="instance" UID="2735">
+    <item initValue="0" variableType="number" variableName="n" type="variable"/>
+    <item initValue="0" variableType="number" variableName="s" type="variable"/>
+    <item type="behavior" behaviorType="SinBehavior" name="曲线">
+      <item valueDataType="number" value="1" name="active"/>
+      <item valueDataType="number" value="5" name="movement"/>
+      <item valueDataType="number" value="0" name="wave"/>
+      <item valueDataType="number" value="2" name="period"/>
+      <item valueDataType="number" value="0" name="periodRandom"/>
+      <item valueDataType="number" value="0" name="periodOffset"/>
+      <item valueDataType="number" value="0" name="periodOffsetRandom"/>
+      <item valueDataType="number" value="5" name="magnitude"/>
+      <item valueDataType="number" value="0" name="magnitudeRandom"/>
+    </item>
+  </item>
+  <item type="instance" UID="2739"/>
+  <item type="instance" UID="2737"/>
+  <item type="instance" UID="2733">
+    <item initValue="0" variableType="number" variableName="c" type="variable"/>
+    <item initValue="0" variableType="number" variableName="n" type="variable"/>
+  </item>
+  <item type="instance" UID="2731">
+    <item initValue="0" variableType="number" variableName="c" type="variable"/>
+    <item initValue="0" variableType="number" variableName="n" type="variable"/>
+  </item>
+  <item type="instance" UID="2729"/>
+  <item type="instance" UID="2727"/>
+  <item type="instance" UID="2721"/>
+  <item type="instance" UID="2717"/>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnSceneInitCompleteEvent" callName="onSceneInitComplete" isTrigger="true" target="System"/>
+    <item type="action" persistent="false" callTarget="instance" callName="setValue" target="content1">
+      <item valueDataType="string" value="n" name="10" variable="true"/>
+      <item valueDataType="any" value="1" name="11"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setScale" target="title2">
+      <item valueDataType="number" value="0" name="16"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setScale" target="title3">
+      <item valueDataType="number" value="0" name="16"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="title1">
+      <item valueDataType="number" value="-100" name="16"/>
+      <item valueDataType="number" value="180" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="enter">
+      <item valueDataType="number" value="480" name="16"/>
+      <item valueDataType="number" value="700" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setAlpha" target="AISprite2750">
+      <item valueDataType="number" value="0" name="10"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareInstanceVariableEvent" callName="compareInstanceVariable" isTrigger="false" target="content1">
+      <item valueDataType="string" value="n" name="instanceVariable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="1" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareInstanceVariableEvent" callName="compareInstanceVariable" isTrigger="false" target="content1">
+      <item valueDataType="string" value="c" name="instanceVariable" variable="true"/>
+      <item valueDataType="string" value="%22lessOrEqual%22" name="operationType"/>
+      <item valueDataType="any" value="3" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="EveryXSecondsEvent" callName="everyXSecondEvent" isTrigger="false" target="System">
+      <item valueDataType="number" value="0.5" name="interval"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="appendText" target="text1">
+      <item valueDataType="string" value="content1.text.charAt(content1.c)" name="2"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="addTo" target="content1">
+      <item valueDataType="string" value="c" name="10" variable="true"/>
+      <item valueDataType="number" value="1" name="11"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="true">
+    <item type="condition" callTarget="instance" paramsClass="CompareInstanceVariableEvent" callName="compareInstanceVariable" isTrigger="false" target="content1">
+      <item valueDataType="string" value="c" name="instanceVariable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="4" name="value"/>
+    </item>
+    <item type="action" persistent="true" callTarget="instance" callName="execTween" target="title1">
+      <item valueDataType="string" value="%22tween%22" name="key"/>
+      <item valueDataType="number" value="320" name="x"/>
+      <item valueDataType="number" value="" name="y"/>
+      <item valueDataType="number" value="" name="anchorX"/>
+      <item valueDataType="number" value="" name="anchorY"/>
+      <item valueDataType="number" value="" name="width"/>
+      <item valueDataType="number" value="" name="height"/>
+      <item valueDataType="number" value="" name="rotation"/>
+      <item valueDataType="number" value="" name="alpha"/>
+      <item valueDataType="number" value="1000" name="duration"/>
+      <item valueDataType="string" value="%22elasticOut%22" name="ease"/>
+      <item valueDataType="number" value="0" name="waitTime"/>
+      <item valueDataType="number" value="0" name="loop"/>
+      <item valueDataType="number" value="1" name="scaleX"/>
+      <item valueDataType="number" value="1" name="scaleY"/>
+    </item>
+    <item type="action" persistent="true" callTarget="instance" callName="execTween" target="title2">
+      <item valueDataType="string" value="%22tween%22" name="key"/>
+      <item valueDataType="number" value="" name="x"/>
+      <item valueDataType="number" value="" name="y"/>
+      <item valueDataType="number" value="" name="anchorX"/>
+      <item valueDataType="number" value="" name="anchorY"/>
+      <item valueDataType="number" value="" name="width"/>
+      <item valueDataType="number" value="" name="height"/>
+      <item valueDataType="number" value="" name="rotation"/>
+      <item valueDataType="number" value="" name="alpha"/>
+      <item valueDataType="number" value="1000" name="duration"/>
+      <item valueDataType="string" value="%22bounceOut%22" name="ease"/>
+      <item valueDataType="number" value="0" name="waitTime"/>
+      <item valueDataType="number" value="0" name="loop"/>
+      <item valueDataType="number" value="1" name="scaleX"/>
+      <item valueDataType="number" value="1" name="scaleY"/>
+    </item>
+    <item type="action" persistent="true" callTarget="instance" callName="execTween" target="title3">
+      <item valueDataType="string" value="%22tween%22" name="key"/>
+      <item valueDataType="number" value="" name="x"/>
+      <item valueDataType="number" value="" name="y"/>
+      <item valueDataType="number" value="" name="anchorX"/>
+      <item valueDataType="number" value="" name="anchorY"/>
+      <item valueDataType="number" value="" name="width"/>
+      <item valueDataType="number" value="" name="height"/>
+      <item valueDataType="number" value="" name="rotation"/>
+      <item valueDataType="number" value="" name="alpha"/>
+      <item valueDataType="number" value="1000" name="duration"/>
+      <item valueDataType="string" value="%22backIn%22" name="ease"/>
+      <item valueDataType="number" value="200" name="waitTime"/>
+      <item valueDataType="number" value="0" name="loop"/>
+      <item valueDataType="number" value="1" name="scaleX"/>
+      <item valueDataType="number" value="1" name="scaleY"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnTweenCompleteEvent" callName="onTweenComplete" isTrigger="true" target="title3">
+      <item valueDataType="string" value="%22tween%22" name="key"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setValue" target="content2">
+      <item valueDataType="string" value="n" name="10" variable="true"/>
+      <item valueDataType="any" value="1" name="11"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareInstanceVariableEvent" callName="compareInstanceVariable" isTrigger="false" target="content2">
+      <item valueDataType="string" value="n" name="instanceVariable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="1" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareInstanceVariableEvent" callName="compareInstanceVariable" isTrigger="false" target="content2">
+      <item valueDataType="string" value="c" name="instanceVariable" variable="true"/>
+      <item valueDataType="string" value="%22lessOrEqual%22" name="operationType"/>
+      <item valueDataType="any" value="13" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="EveryXSecondsEvent" callName="everyXSecondEvent" isTrigger="false" target="System">
+      <item valueDataType="number" value="0.1" name="interval"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="appendText" target="text2">
+      <item valueDataType="string" value="content2.text.charAt(content2.c)" name="2"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="addTo" target="content2">
+      <item valueDataType="string" value="c" name="10" variable="true"/>
+      <item valueDataType="number" value="1" name="11"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareInstanceVariableEvent" callName="compareInstanceVariable" isTrigger="false" target="content2">
+      <item valueDataType="string" value="c" name="instanceVariable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="14" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareYPosEvent" callName="compareY" isTrigger="false" target="enter">
+      <item valueDataType="string" value="%22notEqualTo%22" name="operationType"/>
+      <item valueDataType="number" value="380" name="y"/>
+    </item>
+    <item type="action" persistent="true" callTarget="instance" callName="execTween" target="enter">
+      <item valueDataType="string" value="%22tween%22" name="key"/>
+      <item valueDataType="number" value="" name="x"/>
+      <item valueDataType="number" value="380" name="y"/>
+      <item valueDataType="number" value="" name="anchorX"/>
+      <item valueDataType="number" value="" name="anchorY"/>
+      <item valueDataType="number" value="" name="width"/>
+      <item valueDataType="number" value="" name="height"/>
+      <item valueDataType="number" value="" name="rotation"/>
+      <item valueDataType="number" value="" name="alpha"/>
+      <item valueDataType="number" value="1000" name="duration"/>
+      <item valueDataType="string" value="%22backOut%22" name="ease"/>
+      <item valueDataType="number" value="0" name="waitTime"/>
+      <item valueDataType="number" value="0" name="loop"/>
+      <item valueDataType="number" value="1" name="scaleX"/>
+      <item valueDataType="number" value="1" name="scaleY"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="true">
+    <item type="condition" callTarget="instance" paramsClass="CompareYPosEvent" callName="compareY" isTrigger="false" target="enter">
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="number" value="380" name="y"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setAlpha" target="AISprite2750">
+      <item valueDataType="number" value="1" name="10"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="startFade" target="AISprite2750" behaviorName="淡入淡出"/>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="enter"/>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoScene" target="System">
+      <item valueDataType="string" value="%22MainScene%22" name="18"/>
+    </item>
+  </item>
+</eventSheets>
