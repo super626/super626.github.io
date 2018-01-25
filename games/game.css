@@ -1,9 +1,16 @@
 
 .backbtn{
+    z-index: 9999;
+    position: fixed ! important;
+    left: 0px;
+    top: 0px;
+}
+
+.backbtn img {
+    position: absolute;
     width:45px;
     height:45px;
-    float:left;
-    margin-left:10px;
-    background:url(go-back256.png) no-repeat 0px 0px;
+    left: 0px;
+    top: 0px;
 }
 
