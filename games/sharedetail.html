@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">游戏</h1>
+		</header>
+		<style type="text/css">
+			.mui-media {
+				font-size: 14px;
+			}
+			
+			.mui-table-view .mui-media-object {
+				max-width: initial;
+				width: 90px;
+				height: 70px;
+			}
+			
+			.meta-info {
+				position: absolute;
+				left: 115px;
+				right: 15px;
+				bottom: 8px;
+				color: #8f8f94;
+			}
+			
+			.meta-info .author,
+			.meta-info .time {
+				display: inline-block;
+			}
+			
+			.meta-info .time {
+				float: right;
+			}
+			
+			.mui-table-view:before,
+			.mui-table-view:after {
+				height: 0;
+			}
+			
+			.mui-content>.mui-table-view:first-child {
+				margin-top: 1px;
+			}
+			
+			.banner {
+				height: 240px;
+				overflow: hidden;
+				position: relative;
+				background-position: center;
+				background-color: #ccc;
+			}
+			
+			.banner img {
+				width: 100%;
+				height: auto;
+			}
+			
+			.banner .title {
+				position: absolute;
+				left: 40%;
+				bottom: 55%;
+				width: 90%;
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 21px;
+				color: white;
+				z-index: 11;
+			}
+			
+			.banner .playbtn {
+				position: absolute;
+				left: 45%;
+				bottom: 45%;
+				width: 10%;
+				height: auto;
+			}
+			
+			.banner .waitingprogress {
+				position: absolute;
+				left: 20%;
+				bottom: 55%;
+				width: 60%;
+			}
+			
+			.article-content {
+				font-size: 15px;
+				padding: 10px 15px;
+				color: #000;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="mui-content">
+			<iframe src="plane/index.html"></iframe>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-right" onclick="onDownload()" src="img/320X320.png">
+						<div class="mui-media-body">
+							更多精彩内容请下载AllSee播放器
+							<p class="mui-ellipsis-2" onclick="onDownload()">手机也可以看电脑上的大片, 2D转3D技术，飞屏技术，热门电影资讯，尽在AllSee播放器。</p>
+
+						</div>
+					</a>
+				</li>
+
+			</ul>
+		</div>
+
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function getUrlParam(name) {
+				//构造一个含有目标参数的正则表达式对象
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+				//匹配目标参数
+				var r = window.location.search.substr(1).match(reg);
+				//返回参数值
+				if(r != null) {
+					return decodeURIComponent(r[2]);
+				}
+				return null;
+			}
+			var gametitle = getUrlParam('gametitle');
+			var gameurl = getUrlParam('gameurl');
+			
+
+			function getDefaultData() {
+				return {
+					cover: '/img/videoloading.jpg',
+					title: '',
+					director: '',
+					actors: '',
+					time: '',
+					content: ''
+				}
+			}
+
+			var vm = new Vue({
+				el: '.mui-content',
+				data: getDefaultData(),
+				methods: {
+					resetData: function() { //重置数据
+						Object.assign(this.$data, getDefaultData());
+					}
+				}
+			});
+
+			$(function() {
+				vm.content = content;
+				vm.director = director;
+				vm.title = title;
+				vm.cover = cover;
+				vm.time = mins;
+				vm.actors = actors;
+			});
+
+			function onDownload() {
+				window.location.href='https://super626.github.io/allsee-index.html#download';
+				}
+		</script>
+	</body>
+
+</html>
