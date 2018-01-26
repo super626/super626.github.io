@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">游戏</h1>
@@ -98,20 +98,24 @@
 	<body>
 
 		<div class="mui-content">
-			<iframe src="plane/index.html"></iframe>
-			<ul class="mui-table-view">
+			<div style="position:absolute; top:0px; left:0px; z-index:9">
+				<iframe id="frame-game" width="100%"></iframe>
+			</div>
+			<div style="width:100%; height:200px; position:absolute; top:0px; left:0px; z-index:99">
+				<ul class="mui-table-view">
 				<li class="mui-table-view-cell mui-media">
 					<a href="javascript:;">
-						<img class="mui-media-object mui-pull-right" onclick="onDownload()" src="img/320X320.png">
+						<img class="mui-media-object mui-pull-right" onclick="onDownload()" src="../img/320X320.png">
 						<div class="mui-media-body">
 							更多精彩内容请下载AllSee播放器
-							<p class="mui-ellipsis-2" onclick="onDownload()">手机也可以看电脑上的大片, 2D转3D技术，飞屏技术，热门电影资讯，尽在AllSee播放器。</p>
+							<p class="mui-ellipsis-2" onclick="onDownload()">手机也可以看电脑上的大片, 2D转3D技术，飞屏技术，热门电影资讯,互动小游戏，尽在AllSee播放器。</p>
 
 						</div>
 					</a>
 				</li>
-
 			</ul>
+			</div>
+			
 		</div>
 
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
@@ -155,12 +159,12 @@
 			});
 
 			$(function() {
-				vm.content = content;
-				vm.director = director;
-				vm.title = title;
-				vm.cover = cover;
-				vm.time = mins;
-				vm.actors = actors;
+				var gameframe = document.getElementById('frame-game');
+				gameframe.height = window.screen.availHeight;
+				gameframe.src = gameurl;
+				
+				var title=document.querySelector(".mui-title");
+				title.textContent = gametitle;
 			});
 
 			function onDownload() {
