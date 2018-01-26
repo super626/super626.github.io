@@ -119,8 +119,7 @@
 		</div>
 
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-		<script src="js/mui.min.js"></script>
-		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.min.js"></script>
 		<script type="text/javascript">
 			function getUrlParam(name) {
 				//构造一个含有目标参数的正则表达式对象
@@ -136,28 +135,6 @@
 			var gametitle = getUrlParam('gametitle');
 			var gameurl = getUrlParam('gameurl');
 			
-
-			function getDefaultData() {
-				return {
-					cover: '/img/videoloading.jpg',
-					title: '',
-					director: '',
-					actors: '',
-					time: '',
-					content: ''
-				}
-			}
-
-			var vm = new Vue({
-				el: '.mui-content',
-				data: getDefaultData(),
-				methods: {
-					resetData: function() { //重置数据
-						Object.assign(this.$data, getDefaultData());
-					}
-				}
-			});
-
 			$(function() {
 				var gameframe = document.getElementById('frame-game');
 				gameframe.height = window.screen.availHeight;
