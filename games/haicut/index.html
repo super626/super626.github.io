@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html>
+<title>美发沙龙</title>
+<head>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name=viewport content="maximum-scale = 1, user-scalable = no, width = device-width, initial-scale = 1"/>
+	
+	<!-- Include the HTML5 API -->
+	    <script type="text/javascript" src="game.js"></script>
+	
+   
+	<script>
+		// prevent default pinch/touch gesture
+		function PreventDefault(event) {
+		  event.preventDefault() ;
+		}
+		function clickLogo(href) {
+			var link = document.createElement('a');
+			link.setAttribute('href', href);
+			link.setAttribute('target','_blank');
+			var clickevent = document.createEvent('Event');
+			clickevent.initEvent('click', true, false);
+			link.dispatchEvent(clickevent);
+			return false;
+		}
+		
+		// Init events
+		function initEvents() {
+			auto_resize_area();
+			window.addEventListener("resize", auto_resize_area, false);
+			window.addEventListener("unload", ig.global.pauseBGM, false);
+			window.addEventListener("blur", ig.global.pauseBGM, false);
+			window.addEventListener("pagehide", ig.global.pauseBGM, false);
+			window.addEventListener("focus", ig.global.resumeBGM, false);
+			window.addEventListener("pageshow", ig.global.resumeBGM, false);
+			window.ontouchmove = PreventDefault(event);
+			setInterval(auto_resize_area, 5000);
+			//window.onresize = auto_resize_area("aaaa");
+		}	
+		
+		// auto resize the canvas area to match the device's browser's viewable area
+		function auto_resize_area() {
+			var default_aspect_ratio = true;
+			
+			// PLEASE ENTER YOUR DEFAULT GAME'S SIZE
+			var original_width = 1024; var original_height = 768;
+			var optimal_aspect_ratio = original_width / original_height; var device_aspect_ratio = window.innerWidth / window.innerHeight;
+			var optimal_width = window.innerWidth; var optimal_height = window.innerHeight;
+			
+			if (default_aspect_ratio == true) {
+				if (device_aspect_ratio > optimal_aspect_ratio) 
+					optimal_width = window.innerHeight * optimal_aspect_ratio;
+				 else 
+					optimal_height = window.innerWidth / optimal_aspect_ratio;
+			} else {
+				optimal_width = window.innerHeight / optimal_aspect_ratio;
+				optimal_height = window.innerWidth * optimal_aspect_ratio;
+			}
+			document.getElementById('canvas').style.width =  optimal_width + 'px';
+			document.getElementById('canvas').style.height =  optimal_height + 'px';
+		}
+		
+		// prototype log function for all devices and os
+		(function(){
+		  window.log = function(){
+			  log.history = log.history || []; 
+			  log.history.push(arguments);
+			  if(this.console)
+			  { console.log( Array.prototype.slice.call(arguments) ); }
+			};
+		})();
+	</script>
+	
+	<script type="text/javascript" src="lib/impact/impact.js"></script><script type="text/javascript" src="lib/game/main.js"></script>
+	<style>
+        #spilgames-splash-screen{
+            width: 100%;
+            height: 100%;
+        background: url('Splash_Image_GGG.png') top center no-repeat; /* Change "A10" to "GGG" or "Zibbo" based on the brand your game matches */
+            position: absolute;
+            z-index: 10000; /* Make sure its on top of the game */
+            background-size: 90%;
+            background-color:#FFF; /* Change to #FFF for GGG or Zibbo branded games */
+        }
+        .spilgames-splash-screen-gone{
+            display:none !important;
+        }
+    </style>
+</head>
+<body style="margin:0; padding:0;" onload="initEvents();" >
+	<!-- placeholder for the Spil Games Splash Screen -->
+	<div id="spilgames-splash-screen" class="spilgames-splash-screen-gone"></div>
+    
+	<div id="result" style="float:left"></div>
+	<div id="result2" style="float:right"></div>
+	
+	<div> <canvas id="canvas" style="position:absolute; margin:auto; left:0; top:0; bottom:0; right:0; width:100%; height:100%; -webkit-tap-highlight-color: transparent;"></canvas>  </div>
+	
+	
+	<!-- your game code -->
+    
+    <!-- declare the 'SpilData' object and the app ID property -->
+    <!-- Load the HTML5 API -->
+    <script type="text/javascript">
+    GameAPI.loadAPI (function (apiInstance) {
+        
+            // Checks if splash screen is enabled and if it has an 'action' method
+            var splashData = apiInstance.Branding.getSplashScreen();
+            if(splashData.show && splashData.action) {
+            
+            var splashScreen = document.getElementById('spilgames-splash-screen');
+            splashScreen.addEventListener('click', splashData.action);
+            splashScreen.classList.remove('spilgames-splash-screen-gone');
+            
+            // Displays the splash screen for 2 seconds,
+            window.setTimeout(function() {
+                splashScreen.classList.add('spilgames-splash-screen-gone');
+            }, 2000);
+
+            }
+        });
+    
+    </script>
+	
+</body>
+</html>
