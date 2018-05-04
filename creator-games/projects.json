@@ -2,13 +2,13 @@
     "creator_games": [
                       {
                       "title": "test1",
-                      "path": "test1.zip",
+                      "path": "test1",
                       "des": "test1",
                       "version": 0
                       },
                       {
                       "name": "test2",
-                      "path": "test2.zip",
+                      "path": "test2",
                       "des": "test2",
                       "version": 0
                       }
