@@ -1,0 +1,13 @@
+
+tx_icon_blue.png
+size: 32,32
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ui_tb_buff_lan
+  rotate: false
+  xy: 2, 2
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1

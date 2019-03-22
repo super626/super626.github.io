@@ -1,0 +1,111 @@
+
+tx_putong_yan.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+smoke/smoke_00
+  rotate: false
+  xy: 2, 392
+  size: 200, 99
+  orig: 200, 100
+  offset: 0, 1
+  index: -1
+smoke/smoke_01
+  rotate: true
+  xy: 88, 16
+  size: 185, 85
+  orig: 200, 100
+  offset: 15, 9
+  index: -1
+smoke/smoke_02
+  rotate: false
+  xy: 191, 154
+  size: 171, 72
+  orig: 200, 100
+  offset: 17, 13
+  index: -1
+smoke/smoke_03
+  rotate: true
+  xy: 340, 16
+  size: 136, 71
+  orig: 200, 100
+  offset: 36, 17
+  index: -1
+smoke/smoke_04
+  rotate: true
+  xy: 390, 179
+  size: 139, 77
+  orig: 200, 100
+  offset: 33, 18
+  index: -1
+smoke/smoke_05
+  rotate: false
+  xy: 175, 65
+  size: 163, 87
+  orig: 200, 100
+  offset: 32, 5
+  index: -1
+smoke/smoke_06
+  rotate: true
+  xy: 393, 320
+  size: 171, 95
+  orig: 200, 100
+  offset: 21, 4
+  index: -1
+smoke/smoke_07
+  rotate: false
+  xy: 199, 228
+  size: 189, 75
+  orig: 200, 100
+  offset: 7, 15
+  index: -1
+smoke/smoke_08
+  rotate: true
+  xy: 2, 12
+  size: 189, 84
+  orig: 200, 100
+  offset: 7, 1
+  index: -1
+smoke/smoke_09
+  rotate: false
+  xy: 199, 305
+  size: 189, 85
+  orig: 200, 100
+  offset: 7, 14
+  index: -1
+smoke/smoke_10
+  rotate: true
+  xy: 413, 22
+  size: 155, 62
+  orig: 200, 100
+  offset: 22, 15
+  index: -1
+smoke/smoke_11
+  rotate: false
+  xy: 2, 203
+  size: 187, 88
+  orig: 200, 100
+  offset: 2, 10
+  index: -1
+smoke/smoke_12
+  rotate: false
+  xy: 204, 392
+  size: 187, 99
+  orig: 200, 100
+  offset: 7, 0
+  index: -1
+smoke/smoke_13
+  rotate: false
+  xy: 175, 2
+  size: 159, 61
+  orig: 200, 100
+  offset: 33, 30
+  index: -1
+smoke/smoke_14
+  rotate: false
+  xy: 2, 293
+  size: 195, 97
+  orig: 200, 100
+  offset: 5, 2
+  index: -1
